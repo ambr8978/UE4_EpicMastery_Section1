@@ -1,0 +1,3 @@
+C:\Users\antho\DevLocal\StealthGameProjectBase418\StealthGame\Source\FPSGame\FPSGame.Build.cs
+C:\Users\antho\DevLocal\StealthGameProjectBase418\StealthGame\Source\FPSGame.Target.cs
+C:\Users\antho\DevLocal\StealthGameProjectBase418\StealthGame\Source\FPSGameEditor.Target.cs
