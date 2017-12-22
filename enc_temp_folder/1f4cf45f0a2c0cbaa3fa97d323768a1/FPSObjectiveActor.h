@@ -18,10 +18,10 @@ public:
 	AFPSObjectiveActor();
 
 	virtual void Tick(float DeltaTime) override;
-
-	virtual void NotifyActorBeginOverlap(AActor* OtherActor) override;
-
 protected:
+	// Called when the game starts or when spawned
+	virtual void BeginPlay() override;
+
 	//Will be used to give our objective actor a visual representation
 	UPROPERTY(VisibleAnywhere, Category = "Components")
 	UStaticMeshComponent* MeshComp;
@@ -29,14 +29,4 @@ protected:
 	//Provides sphere collision
 	UPROPERTY(VisibleAnywhere, Category = "Components")
 	USphereComponent*  SphereComp;
-
-	UPROPERTY(EditDefaultsOnly, Category = "Effects")
-	UParticleSystem* PickupFX;
-
-	// Called when the game starts or when spawned
-	virtual void BeginPlay() override;
-
-	//Obviously unclean
-	void PlayEffects();
-
 };
