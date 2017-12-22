@@ -465,3 +465,78 @@ LogInit: Object subsystem initialized
 [2017.12.22-20.33.15:649][308]LogSavePackage: Display: Finished SavePackage ../../../../../../Users/antho/DevLocal/StealthGameProjectBase418/StealthGame/Saved/Autosaves/Game/Maps/FirstPersonExampleMap_Auto1.umap
 [2017.12.22-20.33.15:654][308]LogFileHelpers: Editor autosave (incl. sublevels) for '/Game/Maps/FirstPersonExampleMap' took 0.302
 [2017.12.22-20.33.15:654][308]LogFileHelpers: Editor autosave (incl. sublevels) for all levels took 0.302
+[2017.12.22-20.54.10:533][101]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/Blueprints/BP_Objective" FILE="../../../../../../Users/antho/DevLocal/StealthGameProjectBase418/StealthGame/Content/Blueprints/BP_Objective.uasset" SILENT=true
+[2017.12.22-20.54.10:568][101]LogSavePackage: Save=20.86ms
+[2017.12.22-20.54.10:568][101]LogSavePackage: Moving '../../../../../../Users/antho/DevLocal/StealthGameProjectBase418/StealthGame/Saved/BP_Objective736237684ECFCE9AB41D28B392FE90B0.tmp' to '../../../../../../Users/antho/DevLocal/StealthGameProjectBase418/StealthGame/Content/Blueprints/BP_Objective.uasset'
+[2017.12.22-20.54.10:572][101]LogSavePackage: Display: Finished SavePackage ../../../../../../Users/antho/DevLocal/StealthGameProjectBase418/StealthGame/Content/Blueprints/BP_Objective.uasset
+[2017.12.22-20.54.13:471][175]LogVSAccessor: Warning: Couldn't access Visual Studio
+[2017.12.22-20.54.13:485][175]Candidate modules for hot reload:
+[2017.12.22-20.54.13:485][175]  FPSGame
+[2017.12.22-20.54.13:486][175]Launching UnrealBuildTool... [C:/Program Files/Epic Games/UE_4.18/Engine/Binaries/DotNET/UnrealBuildTool.exe FPSGame -ModuleWithSuffix FPSGame 9676 Win64 Development -editorrecompile -canskiplink "C:/Users/antho/DevLocal/StealthGameProjectBase418/StealthGame/FPSGame.uproject" ]
+[2017.12.22-20.54.13:499][175]Warning: Starting HotReload took  0.2s.
+[2017.12.22-20.55.33:535][846]CompilerResultsLog: New page: Compilation - Dec 22, 2017, 6:55:33 AM
+[2017.12.22-20.55.33:536][846]CompilerResultsLog: Using 'git status' to determine working set for adaptive non-unity build.
+[2017.12.22-20.55.33:537][846]CompilerResultsLog: Creating makefile for hot reloading FPSGame (modules to compile have changed)
+[2017.12.22-20.55.33:537][846]CompilerResultsLog: Compiling game modules for hot reload
+[2017.12.22-20.55.33:538][846]CompilerResultsLog: Parsing headers for FPSGameEditor
+[2017.12.22-20.55.33:538][846]CompilerResultsLog:   Running UnrealHeaderTool "C:\Users\antho\DevLocal\StealthGameProjectBase418\StealthGame\FPSGame.uproject" "C:\Users\antho\DevLocal\StealthGameProjectBase418\StealthGame\Intermediate\Build\Win64\FPSGameEditor\Development\FPSGameEditor.uhtmanifest" -LogCmds="loginit warning, logexit warning, logdatabase error" -Unattended -WarningsAsErrors -installed
+[2017.12.22-20.55.33:539][846]CompilerResultsLog: Reflection code generated for FPSGameEditor in 12.7603469 seconds
+[2017.12.22-20.55.33:539][846]CompilerResultsLog: Performing 5 actions (16 in parallel)
+[2017.12.22-20.55.33:539][846]CompilerResultsLog: FPSObjectiveActor.gen.cpp
+[2017.12.22-20.55.33:540][846]CompilerResultsLog: FPSGame.init.gen.cpp
+[2017.12.22-20.55.33:540][846]CompilerResultsLog: FPSObjectiveActor.cpp
+[2017.12.22-20.55.33:540][846]CompilerResultsLog: [4/5] Link UE4Editor-FPSGame-9676.dll
+[2017.12.22-20.55.33:540][846]CompilerResultsLog: [5/5] Link UE4Editor-FPSGame-9676.lib
+[2017.12.22-20.55.33:540][846]CompilerResultsLog:    Creating library C:\Users\antho\DevLocal\StealthGameProjectBase418\StealthGame\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-FPSGame-9676.lib and object C:\Users\antho\DevLocal\StealthGameProjectBase418\StealthGame\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-FPSGame-9676.exp
+[2017.12.22-20.55.33:541][846]CompilerResultsLog:    Creating library C:\Users\antho\DevLocal\StealthGameProjectBase418\StealthGame\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-FPSGame-9676.suppressed.lib and object C:\Users\antho\DevLocal\StealthGameProjectBase418\StealthGame\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-FPSGame-9676.suppressed.exp
+[2017.12.22-20.55.33:542][846]CompilerResultsLog: Total build time: 79.48 seconds (Local executor: 11.26 seconds)
+[2017.12.22-20.55.33:542][846]LogMainFrame: MainFrame: Module compiling took 80.071 seconds
+[2017.12.22-20.55.33:887][846]LogClass: Could not find existing class FPSObjectiveActor in package /Script/FPSGame for HotReload, assuming new class
+[2017.12.22-20.55.33:896][846]LogHotReload: Re-instancing FPSObjectiveActor after hot-reload.
+[2017.12.22-20.55.34:438][846]LogContentBrowser: Native class hierarchy updated for 'FPSGame' in 0.0019 seconds. Added 5 classes and 3 folders.
+[2017.12.22-20.55.34:441][846]Display: HotReload successful (1 functions remapped  0 scriptstructs remapped)
+[2017.12.22-20.55.35:098][846]LogContentBrowser: Native class hierarchy populated in 0.0110 seconds. Added 2370 classes and 526 folders.
+[2017.12.22-20.55.35:108][846]Display: HotReload took 81.8s.
+[2017.12.22-20.57.29:603][899]LogTexture: Display: Building textures: ThumbnailTexture (DXT1, 512X512)
+[2017.12.22-20.57.29:604][899]LogTexture: Display: Building textures: T_MeshFire_Mask (AutoDXT, 512X512)
+[2017.12.22-20.57.29:604][899]LogTexture: Display: Building textures: round_mask (AutoDXT, 256X256)
+[2017.12.22-20.57.29:604][899]LogTexture: Display: Building textures: sunflare (AutoDXT, 512X512)
+[2017.12.22-20.57.29:604][899]LogTexture: Display: Building textures: T_Flame_Tile (AutoDXT, 512X512)
+[2017.12.22-20.57.29:605][899]LogTexture: Display: Building textures: clouds_dust_detail_01 (AutoDXT, 512X512)
+[2017.12.22-20.57.29:605][899]LogTexture: Display: Building textures: T_Smoke2_Tile (AutoDXT, 256X256)
+[2017.12.22-20.57.29:605][899]LogMaterial: Missing cached shader map for material m_flare_03, compiling. 
+[2017.12.22-20.57.29:688][899]LogStaticMesh: Building static mesh S_SandSwirl...
+[2017.12.22-20.57.29:715][899]LogStaticMesh: Built static mesh [0.03s] /Game/Effects/S_SandSwirl.S_SandSwirl
+[2017.12.22-20.57.29:892][899]LogMaterial: Missing cached shader map for material M_wind_swirl_02, compiling. 
+[2017.12.22-20.57.29:934][899]LogStaticMesh: Building static mesh SM_plane_pivot_down...
+[2017.12.22-20.57.29:944][899]LogStaticMesh: Built static mesh [0.01s] /Game/Effects/SM_plane_pivot_down.SM_plane_pivot_down
+[2017.12.22-20.57.30:036][899]LogMaterial: Missing cached shader map for material gold_ore_effect, compiling. 
+[2017.12.22-20.57.30:097][899]LogMaterial: Missing cached shader map for material Coin2, compiling. 
+[2017.12.22-20.57.36:788][915]BlueprintLog: New page: Compile BP_Objective
+[2017.12.22-20.57.43:701][929]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/Blueprints/BP_Objective" FILE="../../../../../../Users/antho/DevLocal/StealthGameProjectBase418/StealthGame/Content/Blueprints/BP_Objective.uasset" SILENT=true
+[2017.12.22-20.57.43:743][929]LogSavePackage: Save=33.76ms
+[2017.12.22-20.57.43:743][929]LogSavePackage: Moving '../../../../../../Users/antho/DevLocal/StealthGameProjectBase418/StealthGame/Saved/BP_ObjectiveB90D08CC42772AB15C6BA69CA3A3F570.tmp' to '../../../../../../Users/antho/DevLocal/StealthGameProjectBase418/StealthGame/Content/Blueprints/BP_Objective.uasset'
+[2017.12.22-20.57.43:754][929]LogSavePackage: Display: Finished SavePackage ../../../../../../Users/antho/DevLocal/StealthGameProjectBase418/StealthGame/Content/Blueprints/BP_Objective.uasset
+[2017.12.22-20.58.35:954][187]LogTemp: Repeating last play command: Selected Viewport
+[2017.12.22-20.58.36:039][187]LogBlueprintUserMessages: Early PlayInEditor Detection: Level '/Game/Maps/FirstPersonExampleMap.FirstPersonExampleMap:PersistentLevel' has LevelScriptBlueprint '/Game/Maps/FirstPersonExampleMap.FirstPersonExampleMap:PersistentLevel.FirstPersonExampleMap' with GeneratedClass '/Game/Maps/FirstPersonExampleMap.FirstPersonExampleMap_C' with ClassGeneratedBy '/Game/Maps/FirstPersonExampleMap.FirstPersonExampleMap:PersistentLevel.FirstPersonExampleMap'
+[2017.12.22-20.58.36:042][187]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2017.12.22-20.58.36:083][187]PIE: New page: PIE session: FirstPersonExampleMap (Dec 22, 2017, 6:58:36 AM)
+[2017.12.22-20.58.36:084][187]LogPlayLevel: Creating play world package: /Game/Maps/UEDPIE_0_FirstPersonExampleMap
+[2017.12.22-20.58.36:170][187]LogPlayLevel: PIE: StaticDuplicateObject took: (0.085508s)
+[2017.12.22-20.58.36:172][187]LogAIModule: Creating AISystem for world FirstPersonExampleMap
+[2017.12.22-20.58.36:173][187]LogPlayLevel: PIE: World Init took: (0.002392s)
+[2017.12.22-20.58.36:174][187]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/Maps/FirstPersonExampleMap.FirstPersonExampleMap to /Game/Maps/UEDPIE_0_FirstPersonExampleMap.FirstPersonExampleMap (0.090055s)
+[2017.12.22-20.58.36:252][187]LogInit: XAudio2 using 'Speakers (Sound Blaster Recon3Di)' : 2 channels at 48 kHz using 32 bits per sample (channel mask 0x3)
+[2017.12.22-20.58.36:261][187]LogInit: FAudioDevice initialized.
+[2017.12.22-20.58.36:316][187]LogLoad: Game class is 'FPSGameMode'
+[2017.12.22-20.58.36:332][187]LogWorld: Bringing World /Game/Maps/UEDPIE_0_FirstPersonExampleMap.FirstPersonExampleMap up for play (max tick rate 60) at 2017.12.22-13.58.36
+[2017.12.22-20.58.36:336][187]LogWorld: Bringing up level for play took: 0.006228
+[2017.12.22-20.58.36:414][187]LogContentBrowser: Native class hierarchy updated for 'MovieSceneCapture' in 0.0011 seconds. Added 11 classes and 0 folders.
+[2017.12.22-20.58.36:424][187]PIE: Play in editor start time for /Game/Maps/UEDPIE_0_FirstPersonExampleMap 0.844
+[2017.12.22-20.58.36:425][187]LogBlueprintUserMessages: Late PlayInEditor Detection: Level '/Game/Maps/FirstPersonExampleMap.FirstPersonExampleMap:PersistentLevel' has LevelScriptBlueprint '/Game/Maps/FirstPersonExampleMap.FirstPersonExampleMap:PersistentLevel.FirstPersonExampleMap' with GeneratedClass '/Game/Maps/FirstPersonExampleMap.FirstPersonExampleMap_C' with ClassGeneratedBy '/Game/Maps/FirstPersonExampleMap.FirstPersonExampleMap:PersistentLevel.FirstPersonExampleMap'
+[2017.12.22-20.58.47:346][756]LogBlueprintUserMessages: Early EndPlayMap Detection: Level '/Game/Maps/FirstPersonExampleMap.FirstPersonExampleMap:PersistentLevel' has LevelScriptBlueprint '/Game/Maps/FirstPersonExampleMap.FirstPersonExampleMap:PersistentLevel.FirstPersonExampleMap' with GeneratedClass '/Game/Maps/FirstPersonExampleMap.FirstPersonExampleMap_C' with ClassGeneratedBy '/Game/Maps/FirstPersonExampleMap.FirstPersonExampleMap:PersistentLevel.FirstPersonExampleMap'
+[2017.12.22-20.58.47:423][756]LogBlueprintUserMessages: Late EndPlayMap Detection: Level '/Game/Maps/FirstPersonExampleMap.FirstPersonExampleMap:PersistentLevel' has LevelScriptBlueprint '/Game/Maps/FirstPersonExampleMap.FirstPersonExampleMap:PersistentLevel.FirstPersonExampleMap' with GeneratedClass '/Game/Maps/FirstPersonExampleMap.FirstPersonExampleMap_C' with ClassGeneratedBy '/Game/Maps/FirstPersonExampleMap.FirstPersonExampleMap:PersistentLevel.FirstPersonExampleMap'
+[2017.12.22-20.58.50:543][888]LogSavePackage: Save=192.94ms
+[2017.12.22-20.58.50:543][888]LogSavePackage: Moving '../../../../../../Users/antho/DevLocal/StealthGameProjectBase418/StealthGame/Saved/FirstPersonExampleMap01B9450D4CC3124B9AC53487AFFB8362.tmp' to '../../../../../../Users/antho/DevLocal/StealthGameProjectBase418/StealthGame/Content/Maps/FirstPersonExampleMap.umap'
+[2017.12.22-20.58.50:549][888]LogSavePackage: Display: Finished SavePackage ../../../../../../Users/antho/DevLocal/StealthGameProjectBase418/StealthGame/Content/Maps/FirstPersonExampleMap.umap
+[2017.12.22-20.58.50:618][888]LogFileHelpers: Saving map 'FirstPersonExampleMap' took 0.465
