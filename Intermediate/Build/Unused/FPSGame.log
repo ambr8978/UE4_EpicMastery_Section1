@@ -1,5 +1,11 @@
 ﻿  Using 'git status' to determine working set for adaptive non-unity build.
   Compiling game modules for hot reload
-  Target is up to date
+  Performing 3 actions (16 in parallel)
+  FPSBlackHole.cpp
+C:\Users\antho\DevLocal\StealthGameProjectBase418\StealthGame\Source\FPSGame\Public\FPSBlackHole.h(50): warning C4906: string literal cast to 'TCHAR *'
+  [2/3] Link UE4Editor-FPSGame-3218.dll
+  [3/3] Link UE4Editor-FPSGame-3218.lib
+     Creating library C:\Users\antho\DevLocal\StealthGameProjectBase418\StealthGame\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-FPSGame-3218.lib and object C:\Users\antho\DevLocal\StealthGameProjectBase418\StealthGame\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-FPSGame-3218.exp
+     Creating library C:\Users\antho\DevLocal\StealthGameProjectBase418\StealthGame\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-FPSGame-3218.suppressed.lib and object C:\Users\antho\DevLocal\StealthGameProjectBase418\StealthGame\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-FPSGame-3218.suppressed.exp
   Deploying FPSGameEditor Win64 Development...
-  Total build time: 1.68 seconds (NoActionsToExecute executor: 0.00 seconds)
+  Total build time: 4.10 seconds (Local executor: 2.43 seconds)
