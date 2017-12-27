@@ -3,6 +3,8 @@
 #include "FPSExtractionZone.h"
 #include "Components/BoxComponent.h"
 #include "Components/DecalComponent.h"
+#include "FPSCharacter.h"
+#include "FPSGameMode.h"
 
 const FVector COMPONENT_SIZE_VECTOR(200.0f);
 
@@ -40,5 +42,14 @@ void AFPSExtractionZone::HandleOverlap(
 	bool bFromSweep, 
 	const FHitResult & SweepResult)
 {
+	AFPSCharacter* MyPawn = Cast<AFPSCharacter>(OtherActor);
 
+	if (MyPawn && MyPawn->bIsCarryingObjective)
+	{
+		AFPSGameMode* GameMode = Cast<AFPSGameMode>(GetWorld()->GetAuthGameMode());
+		if (GameMode)
+		{
+			GameMode->CompleteMission(MyPawn);
+		}
+	}
 }
