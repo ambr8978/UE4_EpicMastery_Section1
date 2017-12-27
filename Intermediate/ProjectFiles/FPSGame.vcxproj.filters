@@ -1,84 +1,91 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
+
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <ItemGroup>
-    <None Include="..\..\FPSGame.uproject" />
-    <Filter Include="Source">
-      <UniqueIdentifier>{D38CEE6B-940C-44FA-881F-A1D4EAB4D038}</UniqueIdentifier>
-    </Filter>
-    <None Include="..\..\Source\FPSGame.Target.cs">
-      <Filter>Source</Filter>
-    </None>
-    <None Include="..\..\Source\FPSGameEditor.Target.cs">
-      <Filter>Source</Filter>
-    </None>
-    <Filter Include="Config">
-      <UniqueIdentifier>{62A4BDE5-BAF7-4963-B9E7-FDE369A7E7DE}</UniqueIdentifier>
-    </Filter>
-    <None Include="..\..\Config\DefaultEditor.ini">
-      <Filter>Config</Filter>
-    </None>
-    <None Include="..\..\Config\DefaultEngine.ini">
-      <Filter>Config</Filter>
-    </None>
-    <None Include="..\..\Config\DefaultGame.ini">
-      <Filter>Config</Filter>
-    </None>
-    <None Include="..\..\Config\DefaultInput.ini">
-      <Filter>Config</Filter>
-    </None>
-    <Filter Include="Source\FPSGame">
-      <UniqueIdentifier>{D8D1AAF3-8EEA-43F1-A16F-8EAB6C2BA152}</UniqueIdentifier>
-    </Filter>
-    <None Include="..\..\Source\FPSGame\FPSGame.Build.cs">
-      <Filter>Source\FPSGame</Filter>
-    </None>
-    <ClCompile Include="..\..\Source\FPSGame\FPSGame.cpp">
-      <Filter>Source\FPSGame</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\FPSGame\FPSGame.h">
-      <Filter>Source\FPSGame</Filter>
-    </ClInclude>
-    <Filter Include="Source\FPSGame\Private">
-      <UniqueIdentifier>{17D1E825-9FA8-47DE-923A-7D4135B6C42D}</UniqueIdentifier>
-    </Filter>
-    <ClCompile Include="..\..\Source\FPSGame\Private\FPSBlackHole.cpp">
-      <Filter>Source\FPSGame\Private</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Source\FPSGame\Private\FPSCharacter.cpp">
-      <Filter>Source\FPSGame\Private</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Source\FPSGame\Private\FPSGameMode.cpp">
-      <Filter>Source\FPSGame\Private</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Source\FPSGame\Private\FPSHUD.cpp">
-      <Filter>Source\FPSGame\Private</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Source\FPSGame\Private\FPSObjectiveActor.cpp">
-      <Filter>Source\FPSGame\Private</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Source\FPSGame\Private\FPSProjectile.cpp">
-      <Filter>Source\FPSGame\Private</Filter>
-    </ClCompile>
-    <Filter Include="Source\FPSGame\Public">
-      <UniqueIdentifier>{A76BB5C6-C2EB-4AD3-89D3-8948EC102B5B}</UniqueIdentifier>
-    </Filter>
-    <ClInclude Include="..\..\Source\FPSGame\Public\FPSBlackHole.h">
-      <Filter>Source\FPSGame\Public</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Source\FPSGame\Public\FPSCharacter.h">
-      <Filter>Source\FPSGame\Public</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Source\FPSGame\Public\FPSGameMode.h">
-      <Filter>Source\FPSGame\Public</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Source\FPSGame\Public\FPSHUD.h">
-      <Filter>Source\FPSGame\Public</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Source\FPSGame\Public\FPSObjectiveActor.h">
-      <Filter>Source\FPSGame\Public</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Source\FPSGame\Public\FPSProjectile.h">
-      <Filter>Source\FPSGame\Public</Filter>
-    </ClInclude>
-  </ItemGroup>
+	<ItemGroup>
+		<None Include="..\..\FPSGame.uproject" />
+		<Filter Include="Source">
+			<UniqueIdentifier>{A8D4C352-0FCB-4B2C-BE35-AE25137D4F05}</UniqueIdentifier>
+		</Filter>
+		<None Include="..\..\Source\FPSGame.Target.cs">
+			<Filter>Source</Filter>
+		</None >
+		<None Include="..\..\Source\FPSGameEditor.Target.cs">
+			<Filter>Source</Filter>
+		</None >
+		<Filter Include="Config">
+			<UniqueIdentifier>{887D42A5-E997-455C-A794-58DA3750B0E1}</UniqueIdentifier>
+		</Filter>
+		<None Include="..\..\Config\DefaultEditor.ini">
+			<Filter>Config</Filter>
+		</None >
+		<None Include="..\..\Config\DefaultEngine.ini">
+			<Filter>Config</Filter>
+		</None >
+		<None Include="..\..\Config\DefaultGame.ini">
+			<Filter>Config</Filter>
+		</None >
+		<None Include="..\..\Config\DefaultInput.ini">
+			<Filter>Config</Filter>
+		</None >
+		<Filter Include="Source\FPSGame">
+			<UniqueIdentifier>{D56689DA-997A-4924-883B-10233F1E75A0}</UniqueIdentifier>
+		</Filter>
+		<None Include="..\..\Source\FPSGame\FPSGame.Build.cs">
+			<Filter>Source\FPSGame</Filter>
+		</None >
+		<ClCompile Include="..\..\Source\FPSGame\FPSGame.cpp">
+			<Filter>Source\FPSGame</Filter>
+		</ClCompile >
+		<ClInclude Include="..\..\Source\FPSGame\FPSGame.h">
+			<Filter>Source\FPSGame</Filter>
+		</ClInclude >
+		<Filter Include="Source\FPSGame\Private">
+			<UniqueIdentifier>{2EF4CDEB-34F3-4230-A9D1-F468594D53FF}</UniqueIdentifier>
+		</Filter>
+		<ClCompile Include="..\..\Source\FPSGame\Private\FPSBlackHole.cpp">
+			<Filter>Source\FPSGame\Private</Filter>
+		</ClCompile >
+		<ClCompile Include="..\..\Source\FPSGame\Private\FPSCharacter.cpp">
+			<Filter>Source\FPSGame\Private</Filter>
+		</ClCompile >
+		<ClCompile Include="..\..\Source\FPSGame\Private\FPSExtractionZone.cpp">
+			<Filter>Source\FPSGame\Private</Filter>
+		</ClCompile >
+		<ClCompile Include="..\..\Source\FPSGame\Private\FPSGameMode.cpp">
+			<Filter>Source\FPSGame\Private</Filter>
+		</ClCompile >
+		<ClCompile Include="..\..\Source\FPSGame\Private\FPSHUD.cpp">
+			<Filter>Source\FPSGame\Private</Filter>
+		</ClCompile >
+		<ClCompile Include="..\..\Source\FPSGame\Private\FPSObjectiveActor.cpp">
+			<Filter>Source\FPSGame\Private</Filter>
+		</ClCompile >
+		<ClCompile Include="..\..\Source\FPSGame\Private\FPSProjectile.cpp">
+			<Filter>Source\FPSGame\Private</Filter>
+		</ClCompile >
+		<Filter Include="Source\FPSGame\Public">
+			<UniqueIdentifier>{D1EF6225-A393-49A6-A2D5-EA3D855A236A}</UniqueIdentifier>
+		</Filter>
+		<ClInclude Include="..\..\Source\FPSGame\Public\FPSBlackHole.h">
+			<Filter>Source\FPSGame\Public</Filter>
+		</ClInclude >
+		<ClInclude Include="..\..\Source\FPSGame\Public\FPSCharacter.h">
+			<Filter>Source\FPSGame\Public</Filter>
+		</ClInclude >
+		<ClInclude Include="..\..\Source\FPSGame\Public\FPSExtractionZone.h">
+			<Filter>Source\FPSGame\Public</Filter>
+		</ClInclude >
+		<ClInclude Include="..\..\Source\FPSGame\Public\FPSGameMode.h">
+			<Filter>Source\FPSGame\Public</Filter>
+		</ClInclude >
+		<ClInclude Include="..\..\Source\FPSGame\Public\FPSHUD.h">
+			<Filter>Source\FPSGame\Public</Filter>
+		</ClInclude >
+		<ClInclude Include="..\..\Source\FPSGame\Public\FPSObjectiveActor.h">
+			<Filter>Source\FPSGame\Public</Filter>
+		</ClInclude >
+		<ClInclude Include="..\..\Source\FPSGame\Public\FPSProjectile.h">
+			<Filter>Source\FPSGame\Public</Filter>
+		</ClInclude >
+	</ItemGroup>
 </Project>
