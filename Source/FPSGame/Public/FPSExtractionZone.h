@@ -35,6 +35,9 @@ protected:
 	UDecalComponent* DecalComp;
 
 private:
+	UPROPERTY(EditDefaultsOnly, Category="Sounds")
+	USoundBase* ObjectiveMissingSound;
+
 	void SetupOverlapComponent();
 	void SetupDecalComponent();
 };

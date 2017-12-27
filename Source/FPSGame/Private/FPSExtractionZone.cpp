@@ -5,6 +5,7 @@
 #include "Components/DecalComponent.h"
 #include "FPSCharacter.h"
 #include "FPSGameMode.h"
+#include "Kismet/GameplayStatics.h"
 
 const FVector COMPONENT_SIZE_VECTOR(200.0f);
 
@@ -44,12 +45,22 @@ void AFPSExtractionZone::HandleOverlap(
 {
 	AFPSCharacter* MyPawn = Cast<AFPSCharacter>(OtherActor);
 
-	if (MyPawn && MyPawn->bIsCarryingObjective)
+	if (MyPawn == nullptr)
+	{
+		UE_LOG(LogTemp, Log, TEXT("Overlapped with extraction zone, but pawn is NULL"));
+		return;
+	}
+
+	if (MyPawn->bIsCarryingObjective)
 	{
 		AFPSGameMode* GameMode = Cast<AFPSGameMode>(GetWorld()->GetAuthGameMode());
 		if (GameMode)
 		{
 			GameMode->CompleteMission(MyPawn);
 		}
+	}
+	else
+	{
+		UGameplayStatics::PlaySound2D(this, ObjectiveMissingSound);
 	}
 }

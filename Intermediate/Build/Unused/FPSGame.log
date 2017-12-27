@@ -1,15 +1,14 @@
 ﻿  Using 'git status' to determine working set for adaptive non-unity build.
   Parsing headers for FPSGameEditor
     Running UnrealHeaderTool "C:\Users\antho\DevLocal\StealthGameProjectBase418\StealthGame\FPSGame.uproject" "C:\Users\antho\DevLocal\StealthGameProjectBase418\StealthGame\Intermediate\Build\Win64\FPSGameEditor\Development\FPSGameEditor.uhtmanifest" -LogCmds="loginit warning, logexit warning, logdatabase error" -Unattended -WarningsAsErrors -installed
-  Reflection code generated for FPSGameEditor in 23.2726152 seconds
-  Performing 6 actions (16 in parallel)
-  FPSGameMode.cpp
-  FPSGameMode.gen.cpp
+  Reflection code generated for FPSGameEditor in 21.2324235 seconds
+  Performing 5 actions (16 in parallel)
+  FPSExtractionZone.gen.cpp
   FPSGame.init.gen.cpp
   FPSExtractionZone.cpp
-  [5/6] Link UE4Editor-FPSGame.dll
-  [6/6] Link UE4Editor-FPSGame.lib
+  [4/5] Link UE4Editor-FPSGame.dll
+  [5/5] Link UE4Editor-FPSGame.lib
      Creating library C:\Users\antho\DevLocal\StealthGameProjectBase418\StealthGame\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-FPSGame.lib and object C:\Users\antho\DevLocal\StealthGameProjectBase418\StealthGame\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-FPSGame.exp
      Creating library C:\Users\antho\DevLocal\StealthGameProjectBase418\StealthGame\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-FPSGame.suppressed.lib and object C:\Users\antho\DevLocal\StealthGameProjectBase418\StealthGame\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-FPSGame.suppressed.exp
   Deploying FPSGameEditor Win64 Development...
-  Total build time: 38.13 seconds (Local executor: 11.73 seconds)
+  Total build time: 31.89 seconds (Local executor: 7.46 seconds)
