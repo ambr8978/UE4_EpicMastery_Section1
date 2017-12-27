@@ -2,13 +2,14 @@
 
 #include "FPSExtractionZone.h"
 #include "Components/BoxComponent.h"
+#include "Components/DecalComponent.h"
 
-//Extend box L amount of units in X,Y,Z
-const FVector BOX_EXTENT_SIZE_VECTOR(200.0f);
+const FVector COMPONENT_SIZE_VECTOR(200.0f);
 
 AFPSExtractionZone::AFPSExtractionZone()
 {
 	SetupOverlapComponent();
+	SetupDecalComponent();
 
 	RootComponent = OverlapComp;
 
@@ -21,7 +22,14 @@ void AFPSExtractionZone::SetupOverlapComponent()
 	OverlapComp->SetCollisionEnabled(ECollisionEnabled::QueryOnly);
 	OverlapComp->SetCollisionResponseToAllChannels(ECR_Ignore);
 	OverlapComp->SetCollisionResponseToChannel(ECC_Pawn, ECR_Overlap);
-	OverlapComp->SetBoxExtent(BOX_EXTENT_SIZE_VECTOR);
+	OverlapComp->SetBoxExtent(COMPONENT_SIZE_VECTOR);
+}
+
+void AFPSExtractionZone::SetupDecalComponent()
+{
+	DecalComp= CreateDefaultSubobject<UDecalComponent>(TEXT("DecalComp"));
+	DecalComp->DecalSize = COMPONENT_SIZE_VECTOR;
+	DecalComp->SetupAttachment(RootComponent);
 }
 
 void AFPSExtractionZone::HandleOverlap(

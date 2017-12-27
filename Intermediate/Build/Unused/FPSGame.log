@@ -1,33 +1,14 @@
 ﻿  Using 'git status' to determine working set for adaptive non-unity build.
-  Creating makefile for FPSGameEditor (no existing makefile)
   Parsing headers for FPSGameEditor
     Running UnrealHeaderTool "C:\Users\antho\DevLocal\StealthGameProjectBase418\StealthGame\FPSGame.uproject" "C:\Users\antho\DevLocal\StealthGameProjectBase418\StealthGame\Intermediate\Build\Win64\FPSGameEditor\Development\FPSGameEditor.uhtmanifest" -LogCmds="loginit warning, logexit warning, logdatabase error" -Unattended -WarningsAsErrors -installed
-  Reflection code generated for FPSGameEditor in 10.6311358 seconds
-  Deleting old hot reload file: "C:\Users\antho\DevLocal\StealthGameProjectBase418\StealthGame\Binaries\Win64\UE4Editor-FPSGame-2308.dll".
-  Deleting old hot reload file: "C:\Users\antho\DevLocal\StealthGameProjectBase418\StealthGame\Binaries\Win64\UE4Editor-FPSGame-2308.pdb".
-  Deleting old hot reload file: "C:\Users\antho\DevLocal\StealthGameProjectBase418\StealthGame\Binaries\Win64\UE4Editor-FPSGame-2530.dll".
-  Deleting old hot reload file: "C:\Users\antho\DevLocal\StealthGameProjectBase418\StealthGame\Binaries\Win64\UE4Editor-FPSGame-2530.pdb".
-  Deleting old hot reload file: "C:\Users\antho\DevLocal\StealthGameProjectBase418\StealthGame\Binaries\Win64\UE4Editor-FPSGame-3218.dll".
-  Deleting old hot reload file: "C:\Users\antho\DevLocal\StealthGameProjectBase418\StealthGame\Binaries\Win64\UE4Editor-FPSGame-3218.pdb".
-  Deleting old hot reload file: "C:\Users\antho\DevLocal\StealthGameProjectBase418\StealthGame\Binaries\Win64\UE4Editor-FPSGame-333.dll".
-  Deleting old hot reload file: "C:\Users\antho\DevLocal\StealthGameProjectBase418\StealthGame\Binaries\Win64\UE4Editor-FPSGame-333.pdb".
-  Deleting old hot reload file: "C:\Users\antho\DevLocal\StealthGameProjectBase418\StealthGame\Binaries\Win64\UE4Editor-FPSGame-4062.dll".
-  Deleting old hot reload file: "C:\Users\antho\DevLocal\StealthGameProjectBase418\StealthGame\Binaries\Win64\UE4Editor-FPSGame-4062.pdb".
-  Deleting old hot reload file: "C:\Users\antho\DevLocal\StealthGameProjectBase418\StealthGame\Binaries\Win64\UE4Editor-FPSGame-5053.dll".
-  Deleting old hot reload file: "C:\Users\antho\DevLocal\StealthGameProjectBase418\StealthGame\Binaries\Win64\UE4Editor-FPSGame-5053.pdb".
-  Deleting old hot reload file: "C:\Users\antho\DevLocal\StealthGameProjectBase418\StealthGame\Binaries\Win64\UE4Editor-FPSGame-5058.dll".
-  Deleting old hot reload file: "C:\Users\antho\DevLocal\StealthGameProjectBase418\StealthGame\Binaries\Win64\UE4Editor-FPSGame-5058.pdb".
-  Deleting old hot reload file: "C:\Users\antho\DevLocal\StealthGameProjectBase418\StealthGame\Binaries\Win64\UE4Editor-FPSGame-7398.dll".
-  Deleting old hot reload file: "C:\Users\antho\DevLocal\StealthGameProjectBase418\StealthGame\Binaries\Win64\UE4Editor-FPSGame-7398.pdb".
-  Deleting old hot reload file: "C:\Users\antho\DevLocal\StealthGameProjectBase418\StealthGame\Binaries\Win64\UE4Editor-FPSGame-9676.dll".
-  Deleting old hot reload file: "C:\Users\antho\DevLocal\StealthGameProjectBase418\StealthGame\Binaries\Win64\UE4Editor-FPSGame-9676.pdb".
+  Reflection code generated for FPSGameEditor in 20.3887626 seconds
   Performing 5 actions (16 in parallel)
-  FPSExtractionZone.cpp
   FPSExtractionZone.gen.cpp
+  FPSExtractionZone.cpp
   FPSGame.init.gen.cpp
   [4/5] Link UE4Editor-FPSGame.dll
   [5/5] Link UE4Editor-FPSGame.lib
      Creating library C:\Users\antho\DevLocal\StealthGameProjectBase418\StealthGame\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-FPSGame.lib and object C:\Users\antho\DevLocal\StealthGameProjectBase418\StealthGame\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-FPSGame.exp
      Creating library C:\Users\antho\DevLocal\StealthGameProjectBase418\StealthGame\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-FPSGame.suppressed.lib and object C:\Users\antho\DevLocal\StealthGameProjectBase418\StealthGame\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-FPSGame.suppressed.exp
   Deploying FPSGameEditor Win64 Development...
-  Total build time: 65.63 seconds (Local executor: 7.86 seconds)
+  Total build time: 30.82 seconds (Local executor: 7.16 seconds)

@@ -6,6 +6,7 @@
 #include "GameFramework/Actor.h"
 #include "FPSExtractionZone.generated.h"
 
+class UDecalComponent;
 class UBoxComponent;
 
 UCLASS()
@@ -30,6 +31,10 @@ protected:
 	UPROPERTY(VisibleAnywhere, Category="Components")
 	UBoxComponent* OverlapComp;
 
+	UPROPERTY(VisibleAnywhere, Category = "Components")
+	UDecalComponent* DecalComp;
+
 private:
 	void SetupOverlapComponent();
+	void SetupDecalComponent();
 };
