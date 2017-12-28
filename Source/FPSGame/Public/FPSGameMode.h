@@ -18,6 +18,16 @@ public:
 
 	UFUNCTION(BlueprintImplementableEvent, Category="GameMode")
 	void OnMissionCompleted(APawn* InstigatorPawn);
+
+protected:
+	UPROPERTY(EditDefaultsOnly, Category="Spectating")
+	TSubclassOf<AActor> SpectatingViewpointClass;
+
+private:
+	void AttemptToSetNewViewTarget(APlayerController* PlayerController);
+	AActor* GetNewViewTarget();
+	void SetNewViewTarget(AActor* NewViewTarget, APlayerController* PlayerController);
+
 };
 
 
