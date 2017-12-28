@@ -16,7 +16,6 @@ const int INWARD_PULLING_FORCE = -2000;
 // Sets default values
 AFPSBlackHole::AFPSBlackHole()
 {
-	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
 	CreateStaticMeshComponent();
@@ -51,7 +50,6 @@ void AFPSBlackHole::CreateOuterSphereComponent()
 	OuterSphereComponent->SetupAttachment(MeshComp);
 }
 
-// Called when the game starts or when spawned
 void AFPSBlackHole::BeginPlay()
 {
 	Super::BeginPlay();
