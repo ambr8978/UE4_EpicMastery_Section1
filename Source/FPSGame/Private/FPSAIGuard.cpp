@@ -3,6 +3,7 @@
 #include "FPSAIGuard.h"
 #include "Perception/PawnSensingComponent.h"
 #include "DrawDebugHelpers.h"
+#include "TimerManager.h"
 
 const float DEBUG_SPHERE_RADIUS = 32.0f;
 const int DEBUG_SPHERE_NUM_SEGMENTS = 12;
@@ -10,6 +11,8 @@ const FColor DEBUG_SPHERE_COLOR_SEEN = FColor::Red;
 const FColor DEBUG_SPHERE_COLOR_HEARD = FColor::Green;
 const bool DEBUG_SPHERE_PERSISTENT_LINES = false;
 const float DEBUG_SPHERE_LIFE_TIME_SEC = 10.0f;
+
+const float RESET_ROTATION_TIMER_SEC = 3.0f;
 
 AFPSAIGuard::AFPSAIGuard()
 {
@@ -24,8 +27,14 @@ void AFPSAIGuard::SetupPawnSensingComponent()
 
 void AFPSAIGuard::BeginPlay()
 {
-	Super::BeginPlay();	
+	Super::BeginPlay();
 	SetPawnSensingComponentCallbacks();
+	OriginalRotation = GetActorRotation();
+}
+
+void AFPSAIGuard::Tick(float DeltaTime)
+{
+	Super::Tick(DeltaTime);
 }
 
 void AFPSAIGuard::SetPawnSensingComponentCallbacks()
@@ -51,20 +60,46 @@ void AFPSAIGuard::OnPawnSeen(APawn* PawnSeen)
 		DEBUG_SPHERE_LIFE_TIME_SEC);
 }
 
-void AFPSAIGuard::OnPawnHeard(APawn* PawnHeard, const FVector& Location, float Volume)
+void AFPSAIGuard::OnPawnHeard(APawn* PawnHeard, const FVector& LocationNoiseWasHeard, float Volume)
 {
 	DrawDebugSphere(
 		GetWorld(),
-		Location,
+		LocationNoiseWasHeard,
 		DEBUG_SPHERE_RADIUS,
 		DEBUG_SPHERE_NUM_SEGMENTS,
 		DEBUG_SPHERE_COLOR_HEARD,
 		DEBUG_SPHERE_PERSISTENT_LINES,
 		DEBUG_SPHERE_LIFE_TIME_SEC);
+
+	SetActorToNewRotation(LocationNoiseWasHeard);
+	StartResetOrientationTimer();
 }
 
-void AFPSAIGuard::Tick(float DeltaTime)
+void AFPSAIGuard::SetActorToNewRotation(const FVector& NewLocationToRotateTowards)
 {
-	Super::Tick(DeltaTime);
+	FVector Direction = NewLocationToRotateTowards - GetActorLocation();
+	Direction.Normalize();
 
+	FRotator RotationLookingAtNoiseHeard = FRotationMatrix::MakeFromX(Direction).Rotator();
+	//Nullify any changes in pitch and roll so that we don't rotate the guard akwardly
+	RotationLookingAtNoiseHeard.Pitch = 0.0f;
+	RotationLookingAtNoiseHeard.Roll = 0.0f;
+
+	SetActorRotation(RotationLookingAtNoiseHeard);
+}
+
+void AFPSAIGuard::StartResetOrientationTimer()
+{
+	GetWorldTimerManager().ClearTimer(ResetRotationTimer);
+
+	GetWorldTimerManager().SetTimer(
+		ResetRotationTimer,
+		this,
+		&AFPSAIGuard::ResetRotationToOriginalRotation,
+		RESET_ROTATION_TIMER_SEC);
+}
+
+void AFPSAIGuard::ResetRotationToOriginalRotation()
+{
+	SetActorRotation(OriginalRotation);
 }

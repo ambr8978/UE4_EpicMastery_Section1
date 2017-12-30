@@ -30,8 +30,17 @@ protected:
 	void OnPawnSeen(APawn* PawnSeen);
 
 	UFUNCTION()
-	void OnPawnHeard(APawn* PawnHeard, const FVector& Location, float Volume);
+	void OnPawnHeard(APawn* PawnHeard, const FVector& LocationNoiseWasHeard, float Volume);
 private:
+	FRotator OriginalRotation;
+	FTimerHandle ResetRotationTimer;
+
 	void SetupPawnSensingComponent();
 	void SetPawnSensingComponentCallbacks();
+	
+	void SetActorToNewRotation(const FVector& NewLocationToRotateTowards);
+	void StartResetOrientationTimer();
+
+	UFUNCTION()
+	void ResetRotationToOriginalRotation();
 };
