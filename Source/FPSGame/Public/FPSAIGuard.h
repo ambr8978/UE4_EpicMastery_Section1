@@ -27,7 +27,11 @@ protected:
 	//To find definition of delegate, go to declaration of OnSeePawn,
 	//then to the defintion of the FSeePawnDelegate
 	UFUNCTION()
-	void OnPawnSeen(APawn* SeenPawn);
+	void OnPawnSeen(APawn* PawnSeen);
+
+	UFUNCTION()
+	void OnPawnHeard(APawn* PawnHeard, const FVector& Location, float Volume);
 private:
 	void SetupPawnSensingComponent();
+	void SetPawnSensingComponentCallbacks();
 };

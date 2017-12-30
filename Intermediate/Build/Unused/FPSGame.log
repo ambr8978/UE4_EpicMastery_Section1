@@ -1,4 +1,8 @@
 ﻿  Using 'git status' to determine working set for adaptive non-unity build.
-  Target is up to date
-  Deploying FPSGameEditor Win64 Development...
-  Total build time: 2.56 seconds (NoActionsToExecute executor: 0.00 seconds)
+  Performing 3 actions (16 in parallel)
+  FPSAIGuard.cpp
+  [2/3] Link UE4Editor-FPSGame.dll
+  [3/3] Link UE4Editor-FPSGame.lib
+     Creating library C:\Users\antho\DevLocal\StealthGameProjectBase418\StealthGame\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-FPSGame.lib and object C:\Users\antho\DevLocal\StealthGameProjectBase418\StealthGame\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-FPSGame.exp
+     Creating library C:\Users\antho\DevLocal\StealthGameProjectBase418\StealthGame\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-FPSGame.suppressed.lib and object C:\Users\antho\DevLocal\StealthGameProjectBase418\StealthGame\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-FPSGame.suppressed.exp
+  Total build time: 12.43 seconds (Local executor: 10.38 seconds)

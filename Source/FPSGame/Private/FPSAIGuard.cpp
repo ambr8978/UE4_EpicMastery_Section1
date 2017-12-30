@@ -6,7 +6,8 @@
 
 const float DEBUG_SPHERE_RADIUS = 32.0f;
 const int DEBUG_SPHERE_NUM_SEGMENTS = 12;
-const FColor DEBUG_SPHERE_COLOR = FColor::Yellow;
+const FColor DEBUG_SPHERE_COLOR_SEEN = FColor::Red;
+const FColor DEBUG_SPHERE_COLOR_HEARD = FColor::Green;
 const bool DEBUG_SPHERE_PERSISTENT_LINES = false;
 const float DEBUG_SPHERE_LIFE_TIME_SEC = 10.0f;
 
@@ -21,27 +22,45 @@ void AFPSAIGuard::SetupPawnSensingComponent()
 	PawnSensingComp = CreateDefaultSubobject<UPawnSensingComponent>(TEXT("PawnSensingComp"));
 }
 
-void AFPSAIGuard::OnPawnSeen(APawn* SeenPawn)
+void AFPSAIGuard::BeginPlay()
 {
-	if (SeenPawn == nullptr)
+	Super::BeginPlay();	
+	SetPawnSensingComponentCallbacks();
+}
+
+void AFPSAIGuard::SetPawnSensingComponentCallbacks()
+{
+	PawnSensingComp->OnSeePawn.AddDynamic(this, &AFPSAIGuard::OnPawnSeen);
+	PawnSensingComp->OnHearNoise.AddDynamic(this, &AFPSAIGuard::OnPawnHeard);
+}
+
+void AFPSAIGuard::OnPawnSeen(APawn* PawnSeen)
+{
+	if (PawnSeen == nullptr)
 	{
 		return;
 	}
 
 	DrawDebugSphere(
 		GetWorld(),
-		SeenPawn->GetActorLocation(),
+		PawnSeen->GetActorLocation(),
 		DEBUG_SPHERE_RADIUS,
 		DEBUG_SPHERE_NUM_SEGMENTS,
-		DEBUG_SPHERE_COLOR,
+		DEBUG_SPHERE_COLOR_SEEN,
 		DEBUG_SPHERE_PERSISTENT_LINES,
 		DEBUG_SPHERE_LIFE_TIME_SEC);
 }
 
-void AFPSAIGuard::BeginPlay()
+void AFPSAIGuard::OnPawnHeard(APawn* PawnHeard, const FVector& Location, float Volume)
 {
-	Super::BeginPlay();	
-	PawnSensingComp->OnSeePawn.AddDynamic(this, &AFPSAIGuard::OnPawnSeen);
+	DrawDebugSphere(
+		GetWorld(),
+		Location,
+		DEBUG_SPHERE_RADIUS,
+		DEBUG_SPHERE_NUM_SEGMENTS,
+		DEBUG_SPHERE_COLOR_HEARD,
+		DEBUG_SPHERE_PERSISTENT_LINES,
+		DEBUG_SPHERE_LIFE_TIME_SEC);
 }
 
 void AFPSAIGuard::Tick(float DeltaTime)
