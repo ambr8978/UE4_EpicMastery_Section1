@@ -4,6 +4,8 @@
 #include "GameFramework/ProjectileMovementComponent.h"
 #include "Components/SphereComponent.h"
 
+float PROJECTILE_HIT_NOISE_LOUDNESS = 1.0f;
+
 AFPSProjectile::AFPSProjectile() 
 {
 	// Use a sphere as a simple collision representation
@@ -34,11 +36,14 @@ AFPSProjectile::AFPSProjectile()
 
 void AFPSProjectile::OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit)
 {
-	// Only add impulse and destroy projectile if we hit a physics
 	if ((OtherActor != NULL) && (OtherActor != this) && (OtherComp != NULL) && OtherComp->IsSimulatingPhysics())
 	{
 		OtherComp->AddImpulseAtLocation(GetVelocity() * 100.0f, GetActorLocation());
-
-		Destroy();
 	}
+
+	//Instigator is an AActor member that is the pawn that spawned the projectile
+	//MakeNoise needs the Instigator because it will try to use the Pawn's SoundEmitterComponent to make the noise
+	//Instigator is set in FPSCharacter.Fire
+	MakeNoise(PROJECTILE_HIT_NOISE_LOUDNESS, Instigator);
+	Destroy();
 }

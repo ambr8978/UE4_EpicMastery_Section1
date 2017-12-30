@@ -459,3 +459,28 @@ LogInit: Object subsystem initialized
 [2017.12.30-22.43.39:742][308]LogSavePackage: Moving '../../../../../../Users/antho/DevLocal/StealthGameProjectBase418/StealthGame/Saved/FirstPersonExampleMap6E30D31343EF5249504F1C868DCB257C.tmp' to '../../../../../../Users/antho/DevLocal/StealthGameProjectBase418/StealthGame/Content/Maps/FirstPersonExampleMap.umap'
 [2017.12.30-22.43.39:751][308]LogSavePackage: Display: Finished SavePackage ../../../../../../Users/antho/DevLocal/StealthGameProjectBase418/StealthGame/Content/Maps/FirstPersonExampleMap.umap
 [2017.12.30-22.43.39:791][308]LogFileHelpers: Saving map 'FirstPersonExampleMap' took 0.436
+[2017.12.30-22.57.22:168][859]LogVSAccessor: Warning: Couldn't access Visual Studio
+[2017.12.30-22.57.22:203][859]Candidate modules for hot reload:
+[2017.12.30-22.57.22:203][859]  FPSGame
+[2017.12.30-22.57.22:206][859]Launching UnrealBuildTool... [C:/Program Files/Epic Games/UE_4.18/Engine/Binaries/DotNET/UnrealBuildTool.exe FPSGame -ModuleWithSuffix FPSGame 2027 Win64 Development -editorrecompile -canskiplink "C:/Users/antho/DevLocal/StealthGameProjectBase418/StealthGame/FPSGame.uproject" ]
+[2017.12.30-22.57.22:229][859]Warning: Starting HotReload took  0.2s.
+[2017.12.30-22.58.26:099][ 78]CompilerResultsLog: New page: Compilation - Dec 30, 2017, 8:58:26 AM
+[2017.12.30-22.58.26:101][ 78]CompilerResultsLog: Using 'git status' to determine working set for adaptive non-unity build.
+[2017.12.30-22.58.26:101][ 78]CompilerResultsLog: Creating makefile for hot reloading FPSGame (modules to compile have changed)
+[2017.12.30-22.58.26:101][ 78]CompilerResultsLog: Compiling game modules for hot reload
+[2017.12.30-22.58.26:102][ 78]CompilerResultsLog: Performing 4 actions (16 in parallel)
+[2017.12.30-22.58.26:102][ 78]CompilerResultsLog: FPSCharacter.cpp
+[2017.12.30-22.58.26:102][ 78]CompilerResultsLog: FPSProjectile.cpp
+[2017.12.30-22.58.26:102][ 78]CompilerResultsLog: [3/4] Link UE4Editor-FPSGame-2027.dll
+[2017.12.30-22.58.26:102][ 78]CompilerResultsLog: [4/4] Link UE4Editor-FPSGame-2027.lib
+[2017.12.30-22.58.26:102][ 78]CompilerResultsLog:    Creating library C:\Users\antho\DevLocal\StealthGameProjectBase418\StealthGame\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-FPSGame-2027.lib and object C:\Users\antho\DevLocal\StealthGameProjectBase418\StealthGame\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-FPSGame-2027.exp
+[2017.12.30-22.58.26:102][ 78]CompilerResultsLog:    Creating library C:\Users\antho\DevLocal\StealthGameProjectBase418\StealthGame\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-FPSGame-2027.suppressed.lib and object C:\Users\antho\DevLocal\StealthGameProjectBase418\StealthGame\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-FPSGame-2027.suppressed.exp
+[2017.12.30-22.58.26:114][ 78]CompilerResultsLog: Total build time: 62.83 seconds (Local executor: 12.58 seconds)
+[2017.12.30-22.58.26:115][ 78]LogMainFrame: MainFrame: Module compiling took 63.946 seconds
+[2017.12.30-22.58.27:473][ 78]LogHotReload: Re-instancing FPSBlackHole after hot-reload.
+[2017.12.30-22.58.27:591][ 78]LogHotReload: Re-instancing FPSExtractionZone after hot-reload.
+[2017.12.30-22.58.28:149][ 78]LogHotReload: Re-instancing FPSLaunchPad after hot-reload.
+[2017.12.30-22.58.28:711][ 78]LogContentBrowser: Native class hierarchy updated for 'FPSGame' in 0.0055 seconds. Added 9 classes and 3 folders.
+[2017.12.30-22.58.28:716][ 78]Display: HotReload successful (6 functions remapped  0 scriptstructs remapped)
+[2017.12.30-22.58.29:928][ 78]LogContentBrowser: Native class hierarchy populated in 0.0892 seconds. Added 2374 classes and 526 folders.
+[2017.12.30-22.58.29:929][ 78]Display: HotReload took 67.9s.
