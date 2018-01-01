@@ -18,6 +18,7 @@ const float RESET_ROTATION_TIMER_SEC = 3.0f;
 AFPSAIGuard::AFPSAIGuard()
 {
 	PrimaryActorTick.bCanEverTick = true;
+	GuardState = EAIState::Idle;
 	SetupPawnSensingComponent();
 }
 
@@ -51,6 +52,8 @@ void AFPSAIGuard::OnPawnSeen(APawn* PawnSeen)
 		return;
 	}
 
+	SetGuardState(EAIState::Alerted);
+
 	//TODO this code is duplicated from FPS Extraction Zone.  This code should
 	//be contained in a small helper class or something
 	AFPSGameMode* GameMode = Cast<AFPSGameMode>(GetWorld()->GetAuthGameMode());
@@ -67,10 +70,17 @@ void AFPSAIGuard::OnPawnSeen(APawn* PawnSeen)
 		DEBUG_SPHERE_COLOR_SEEN,
 		DEBUG_SPHERE_PERSISTENT_LINES,
 		DEBUG_SPHERE_LIFE_TIME_SEC);
+
 }
 
 void AFPSAIGuard::OnPawnHeard(APawn* PawnHeard, const FVector& LocationNoiseWasHeard, float Volume)
 {
+	if (GuardState == EAIState::Alerted)
+	{
+		return;
+	}
+
+	SetGuardState(EAIState::Suspicious);
 	DrawDebugSphere(
 		GetWorld(),
 		LocationNoiseWasHeard,
@@ -110,5 +120,20 @@ void AFPSAIGuard::StartResetOrientationTimer()
 
 void AFPSAIGuard::ResetRotationToOriginalRotation()
 {
+	if (GuardState == EAIState::Alerted)
+	{
+		return;
+	}
+
+	SetGuardState(EAIState::Idle);
 	SetActorRotation(OriginalRotation);
+}
+
+void AFPSAIGuard::SetGuardState(EAIState NewState)
+{
+	if (GuardState != NewState)
+	{
+		GuardState = NewState;
+		OnStateChanged(GuardState);
+	}
 }
