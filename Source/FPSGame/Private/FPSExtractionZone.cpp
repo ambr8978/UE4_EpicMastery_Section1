@@ -53,10 +53,12 @@ void AFPSExtractionZone::HandleOverlap(
 
 	if (MyPawn->bIsCarryingObjective)
 	{
+		//TODO this code is duplicated from FPS AI Guard.  This code should
+		//be contained in a small helper class or something
 		AFPSGameMode* GameMode = Cast<AFPSGameMode>(GetWorld()->GetAuthGameMode());
 		if (GameMode)
 		{
-			GameMode->CompleteMission(MyPawn);
+			GameMode->CompleteMission(MyPawn, true);
 		}
 	}
 	else

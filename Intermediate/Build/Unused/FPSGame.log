@@ -1,8 +1,18 @@
 ﻿  Using 'git status' to determine working set for adaptive non-unity build.
-  Performing 3 actions (16 in parallel)
+  Creating makefile for hot reloading FPSGameEditor (modules to compile have changed)
+  Compiling game modules for hot reload
+  Parsing headers for FPSGameEditor
+    Running UnrealHeaderTool "C:\Users\antho\DevLocal\StealthGameProjectBase418\StealthGame\FPSGame.uproject" "C:\Users\antho\DevLocal\StealthGameProjectBase418\StealthGame\Intermediate\Build\Win64\FPSGameEditor\Development\FPSGameEditor.uhtmanifest" -LogCmds="loginit warning, logexit warning, logdatabase error" -Unattended -WarningsAsErrors -installed
+  Reflection code generated for FPSGameEditor in 20.5445112 seconds
+  Performing 7 actions (16 in parallel)
+  FPSGame.init.gen.cpp
+  FPSGameMode.gen.cpp
   FPSAIGuard.cpp
-  [2/3] Link UE4Editor-FPSGame.dll
-  [3/3] Link UE4Editor-FPSGame.lib
-     Creating library C:\Users\antho\DevLocal\StealthGameProjectBase418\StealthGame\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-FPSGame.lib and object C:\Users\antho\DevLocal\StealthGameProjectBase418\StealthGame\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-FPSGame.exp
-     Creating library C:\Users\antho\DevLocal\StealthGameProjectBase418\StealthGame\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-FPSGame.suppressed.lib and object C:\Users\antho\DevLocal\StealthGameProjectBase418\StealthGame\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-FPSGame.suppressed.exp
-  Total build time: 12.43 seconds (Local executor: 10.38 seconds)
+  FPSExtractionZone.cpp
+  FPSGameMode.cpp
+  [6/7] Link UE4Editor-FPSGame-5444.dll
+  [7/7] Link UE4Editor-FPSGame-5444.lib
+     Creating library C:\Users\antho\DevLocal\StealthGameProjectBase418\StealthGame\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-FPSGame-5444.lib and object C:\Users\antho\DevLocal\StealthGameProjectBase418\StealthGame\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-FPSGame-5444.exp
+     Creating library C:\Users\antho\DevLocal\StealthGameProjectBase418\StealthGame\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-FPSGame-5444.suppressed.lib and object C:\Users\antho\DevLocal\StealthGameProjectBase418\StealthGame\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-FPSGame-5444.suppressed.exp
+  Deploying FPSGameEditor Win64 Development...
+  Total build time: 88.33 seconds (Local executor: 10.17 seconds)

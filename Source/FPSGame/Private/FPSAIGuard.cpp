@@ -4,6 +4,7 @@
 #include "Perception/PawnSensingComponent.h"
 #include "DrawDebugHelpers.h"
 #include "TimerManager.h"
+#include "FPSGameMode.h"
 
 const float DEBUG_SPHERE_RADIUS = 32.0f;
 const int DEBUG_SPHERE_NUM_SEGMENTS = 12;
@@ -48,6 +49,14 @@ void AFPSAIGuard::OnPawnSeen(APawn* PawnSeen)
 	if (PawnSeen == nullptr)
 	{
 		return;
+	}
+
+	//TODO this code is duplicated from FPS Extraction Zone.  This code should
+	//be contained in a small helper class or something
+	AFPSGameMode* GameMode = Cast<AFPSGameMode>(GetWorld()->GetAuthGameMode());
+	if (GameMode)
+	{
+		GameMode->CompleteMission(PawnSeen, false);
 	}
 
 	DrawDebugSphere(
