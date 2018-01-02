@@ -1,10 +1,11 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
-#include "FPSAIGuard.h"
-#include "Perception/PawnSensingComponent.h"
 #include "DrawDebugHelpers.h"
-#include "TimerManager.h"
+#include "FPSAIGuard.h"
 #include "FPSGameMode.h"
+#include "AI/Navigation/NavigationSystem.h"
+#include "Perception/PawnSensingComponent.h"
+#include "TimerManager.h"
 
 const float DEBUG_SPHERE_RADIUS = 32.0f;
 const int DEBUG_SPHERE_NUM_SEGMENTS = 12;
@@ -15,9 +16,12 @@ const float DEBUG_SPHERE_LIFE_TIME_SEC = 10.0f;
 
 const float RESET_ROTATION_TIMER_SEC = 3.0f;
 
+const int ACCEPTABLE_MIN_DISTANCE_FROM_PATROL_POINT = 50;
+
 AFPSAIGuard::AFPSAIGuard()
 {
 	PrimaryActorTick.bCanEverTick = true;
+	CurrentPatrolPoint = nullptr;
 	GuardState = EAIState::Idle;
 	SetupPawnSensingComponent();
 }
@@ -27,22 +31,32 @@ void AFPSAIGuard::SetupPawnSensingComponent()
 	PawnSensingComp = CreateDefaultSubobject<UPawnSensingComponent>(TEXT("PawnSensingComp"));
 }
 
+void AFPSAIGuard::Tick(float DeltaTime)
+{
+	Super::Tick(DeltaTime);
+	MoveToNextPatrolPointIfAtCurrentPatrolPoint();
+}
+
 void AFPSAIGuard::BeginPlay()
 {
 	Super::BeginPlay();
 	SetPawnSensingComponentCallbacks();
 	OriginalRotation = GetActorRotation();
-}
-
-void AFPSAIGuard::Tick(float DeltaTime)
-{
-	Super::Tick(DeltaTime);
+	StartPatrolIfEnabled();
 }
 
 void AFPSAIGuard::SetPawnSensingComponentCallbacks()
 {
 	PawnSensingComp->OnSeePawn.AddDynamic(this, &AFPSAIGuard::OnPawnSeen);
 	PawnSensingComp->OnHearNoise.AddDynamic(this, &AFPSAIGuard::OnPawnHeard);
+}
+
+void AFPSAIGuard::StartPatrolIfEnabled()
+{
+	if (bPatrol)
+	{
+		MoveToNextPatrolPoint();
+	}
 }
 
 void AFPSAIGuard::OnPawnSeen(APawn* PawnSeen)
@@ -53,6 +67,7 @@ void AFPSAIGuard::OnPawnSeen(APawn* PawnSeen)
 	}
 
 	SetGuardState(EAIState::Alerted);
+	StopMovement();
 
 	//TODO this code is duplicated from FPS Extraction Zone.  This code should
 	//be contained in a small helper class or something
@@ -70,7 +85,6 @@ void AFPSAIGuard::OnPawnSeen(APawn* PawnSeen)
 		DEBUG_SPHERE_COLOR_SEEN,
 		DEBUG_SPHERE_PERSISTENT_LINES,
 		DEBUG_SPHERE_LIFE_TIME_SEC);
-
 }
 
 void AFPSAIGuard::OnPawnHeard(APawn* PawnHeard, const FVector& LocationNoiseWasHeard, float Volume)
@@ -81,6 +95,8 @@ void AFPSAIGuard::OnPawnHeard(APawn* PawnHeard, const FVector& LocationNoiseWasH
 	}
 
 	SetGuardState(EAIState::Suspicious);
+	StopMovement();
+
 	DrawDebugSphere(
 		GetWorld(),
 		LocationNoiseWasHeard,
@@ -127,6 +143,8 @@ void AFPSAIGuard::ResetRotationToOriginalRotation()
 
 	SetGuardState(EAIState::Idle);
 	SetActorRotation(OriginalRotation);
+
+	StartPatrolIfEnabled();
 }
 
 void AFPSAIGuard::SetGuardState(EAIState NewState)
@@ -135,5 +153,42 @@ void AFPSAIGuard::SetGuardState(EAIState NewState)
 	{
 		GuardState = NewState;
 		OnStateChanged(GuardState);
+	}
+}
+
+void AFPSAIGuard::MoveToNextPatrolPoint()
+{
+	if ((CurrentPatrolPoint == nullptr) || (CurrentPatrolPoint == SecondPatrolPoint))
+	{
+		CurrentPatrolPoint = FirstPatrolPoint;
+	}
+	else
+	{
+		CurrentPatrolPoint = SecondPatrolPoint;
+	}
+
+	UNavigationSystem::SimpleMoveToActor(GetController(), CurrentPatrolPoint);
+}
+
+void AFPSAIGuard::MoveToNextPatrolPointIfAtCurrentPatrolPoint()
+{
+	if (CurrentPatrolPoint)
+	{
+		FVector Delta = GetActorLocation() - CurrentPatrolPoint->GetActorLocation();
+		float DistanceToCurrentPatrolPoint = Delta.Size();
+
+		if (DistanceToCurrentPatrolPoint < ACCEPTABLE_MIN_DISTANCE_FROM_PATROL_POINT)
+		{
+			MoveToNextPatrolPoint();
+		}
+	}
+}
+
+void AFPSAIGuard::StopMovement()
+{
+	AController* Controller = GetController();
+	if (Controller)
+	{
+		Controller->StopMovement();
 	}
 }

@@ -30,21 +30,35 @@ protected:
 	virtual void BeginPlay() override;
 
 	UPROPERTY(VisibleAnywhere, Category = "Components")
-	UPawnSensingComponent* PawnSensingComp;
+		UPawnSensingComponent* PawnSensingComp;
 
 	//Parameters are in accordance with the OnSeePawn delegate 
 	//To find definition of delegate, go to declaration of OnSeePawn,
 	//then to the defintion of the FSeePawnDelegate
 	UFUNCTION()
-	void OnPawnSeen(APawn* PawnSeen);
+		void OnPawnSeen(APawn* PawnSeen);
 
 	UFUNCTION()
-	void OnPawnHeard(APawn* PawnHeard, const FVector& LocationNoiseWasHeard, float Volume);
+		void OnPawnHeard(APawn* PawnHeard, const FVector& LocationNoiseWasHeard, float Volume);
 
 	void SetGuardState(EAIState NewState);
-	
+
 	UFUNCTION(BlueprintImplementableEvent, Category = "AI")
-	void OnStateChanged(EAIState NewState);
+		void OnStateChanged(EAIState NewState);
+
+protected:
+	UPROPERTY(EditInstanceOnly, Category = "AI")
+		bool bPatrol;
+
+	UPROPERTY(EditInstanceOnly, Category = "AI", meta = (EditCondition = "bPatrol"))
+		AActor* FirstPatrolPoint;
+
+	UPROPERTY(EditInstanceOnly, Category = "AI", meta = (EditCondition = "bPatrol"))
+		AActor* SecondPatrolPoint;
+
+	AActor* CurrentPatrolPoint;
+	void MoveToNextPatrolPoint();
+
 private:
 	EAIState GuardState;
 	FRotator OriginalRotation;
@@ -52,10 +66,14 @@ private:
 
 	void SetupPawnSensingComponent();
 	void SetPawnSensingComponentCallbacks();
-	
+	void StartPatrolIfEnabled();
+
 	void SetActorToNewRotation(const FVector& NewLocationToRotateTowards);
 	void StartResetOrientationTimer();
 
+	void MoveToNextPatrolPointIfAtCurrentPatrolPoint();
+	void StopMovement();
+
 	UFUNCTION()
-	void ResetRotationToOriginalRotation();
+		void ResetRotationToOriginalRotation();
 };
