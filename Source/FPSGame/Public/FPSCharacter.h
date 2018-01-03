@@ -60,8 +60,6 @@ protected:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "AI")
 	UPawnNoiseEmitterComponent* NoiseEmitterComponent;
 
-	/** Fires a projectile. */
-	void Fire();
 
 	/** Handles moving forward/backward */
 	void MoveForward(float Val);
@@ -70,5 +68,19 @@ protected:
 	void MoveRight(float Val);
 
 	virtual void SetupPlayerInputComponent(UInputComponent* InputComponent) override;
+
+	/** Fires a projectile. */
+	void Fire();
+	void FireProjectile();
+	void PlayFireSound();
+	void PlayFireAnimation();
+
+	/* 
+	Server:
+	Reliable: This code is guaranteed to executre on the server eventually (could be delayed by networking issues, packet loss, etc.)
+	WithValidation:
+	*/
+	UFUNCTION(Server, Reliable, WithValidation)
+	void ServerFire();
 };
 

@@ -6,7 +6,7 @@
 
 float PROJECTILE_HIT_NOISE_LOUDNESS = 1.0f;
 
-AFPSProjectile::AFPSProjectile() 
+AFPSProjectile::AFPSProjectile()
 {
 	// Use a sphere as a simple collision representation
 	CollisionComp = CreateDefaultSubobject<USphereComponent>(TEXT("SphereComp"));
@@ -31,6 +31,9 @@ AFPSProjectile::AFPSProjectile()
 
 	// Die after 3 seconds by default
 	InitialLifeSpan = 3.0f;
+
+	SetReplicates(true);
+	SetReplicateMovement(true);
 }
 
 
@@ -41,9 +44,13 @@ void AFPSProjectile::OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor, UPr
 		OtherComp->AddImpulseAtLocation(GetVelocity() * 100.0f, GetActorLocation());
 	}
 
-	//Instigator is an AActor member that is the pawn that spawned the projectile
-	//MakeNoise needs the Instigator because it will try to use the Pawn's SoundEmitterComponent to make the noise
-	//Instigator is set in FPSCharacter.Fire
-	MakeNoise(PROJECTILE_HIT_NOISE_LOUDNESS, Instigator);
-	Destroy();
+	//Make noise and destroy projectile if we are running on the server
+	if (Role == ROLE_Authority)
+	{
+		//Instigator is an AActor member that is the pawn that spawned the projectile
+		//MakeNoise needs the Instigator because it will try to use the Pawn's SoundEmitterComponent to make the noise
+		//Instigator is set in FPSCharacter.Fire
+		MakeNoise(PROJECTILE_HIT_NOISE_LOUDNESS, Instigator);
+		Destroy();
+	}
 }

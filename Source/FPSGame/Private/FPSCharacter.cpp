@@ -48,7 +48,27 @@ void AFPSCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompon
 
 void AFPSCharacter::Fire()
 {
-	// try and fire a projectile
+	ServerFire();
+	PlayFireSound();
+	PlayFireAnimation();
+}
+
+void AFPSCharacter::ServerFire_Implementation()
+{
+	FireProjectile();
+}
+
+/*
+	This function is used server side, to do sanity checks.
+	Client who called this function will be disconnected if this returns false.
+*/
+bool AFPSCharacter::ServerFire_Validate()
+{
+	return true;
+}
+
+void AFPSCharacter::FireProjectile()
+{
 	if (ProjectileClass)
 	{
 		FVector MuzzleLocation = GunMeshComponent->GetSocketLocation("Muzzle");
@@ -62,14 +82,18 @@ void AFPSCharacter::Fire()
 		// spawn the projectile at the muzzle
 		GetWorld()->SpawnActor<AFPSProjectile>(ProjectileClass, MuzzleLocation, MuzzleRotation, ActorSpawnParams);
 	}
+}
 
-	// try and play the sound if specified
+void AFPSCharacter::PlayFireSound()
+{
 	if (FireSound)
 	{
 		UGameplayStatics::PlaySoundAtLocation(this, FireSound, GetActorLocation());
 	}
+}
 
-	// try and play a firing animation if specified
+void AFPSCharacter::PlayFireAnimation()
+{
 	if (FireAnimation)
 	{
 		// Get the animation object for the arms mesh
