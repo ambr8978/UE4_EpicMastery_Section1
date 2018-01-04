@@ -44,6 +44,8 @@ public:
 	UPROPERTY(BlueprintReadOnly, Category = "Gameplay")
 	bool bIsCarryingObjective;
 
+	virtual void Tick(float DeltaTime) override;
+
 protected:
 	/** Pawn mesh: 1st person view  */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Mesh")
@@ -82,5 +84,9 @@ protected:
 	*/
 	UFUNCTION(Server, Reliable, WithValidation)
 	void ServerFire();
+
+protected:
+	void SetRotationToRemoteValues();
+	float GetPitchFromRemoteViewPitch();
 };
 

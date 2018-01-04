@@ -8,6 +8,9 @@
 #include "Kismet/GameplayStatics.h"
 #include "Components/PawnNoiseEmitterComponent.h"
 
+const float INT_8_BIT_MAX = 255.0f;
+const float DEGREES_360 = 360.0f;
+
 AFPSCharacter::AFPSCharacter()
 {
 	// Create a CameraComponent	
@@ -29,6 +32,16 @@ AFPSCharacter::AFPSCharacter()
 	GunMeshComponent->SetupAttachment(Mesh1PComponent, "GripPoint");
 
 	NoiseEmitterComponent = CreateDefaultSubobject<UPawnNoiseEmitterComponent>(TEXT("NoiseEmitter"));
+}
+
+void AFPSCharacter::Tick(float DeltaTime)
+{
+	Super::Tick(DeltaTime);
+
+	if (!IsLocallyControlled())
+	{
+		SetRotationToRemoteValues();
+	}
 }
 
 void AFPSCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
@@ -121,4 +134,17 @@ void AFPSCharacter::MoveRight(float Value)
 		// add movement in that direction
 		AddMovementInput(GetActorRightVector(), Value);
 	}
+}
+
+void AFPSCharacter::SetRotationToRemoteValues()
+{
+	FRotator NewRotation = CameraComponent->RelativeRotation;
+	NewRotation.Pitch = GetPitchFromRemoteViewPitch();
+	CameraComponent->SetRelativeRotation(NewRotation);
+}
+
+float AFPSCharacter::GetPitchFromRemoteViewPitch()
+{
+	//This calculation is necessary because the remote view pitch is "compressed" into a uint8 value.
+	return (RemoteViewPitch * DEGREES_360 / INT_8_BIT_MAX);
 }
