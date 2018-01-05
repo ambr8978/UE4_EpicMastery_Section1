@@ -1,19 +1,6 @@
 ﻿  Using 'git status' to determine working set for adaptive non-unity build.
+  Creating makefile for hot reloading FPSGameEditor (modules to compile have changed)
   Compiling game modules for hot reload
-  Parsing headers for FPSGameEditor
-    Running UnrealHeaderTool "C:\Users\antho\DevLocal\StealthGameProjectBase418\StealthGame\FPSGame.uproject" "C:\Users\antho\DevLocal\StealthGameProjectBase418\StealthGame\Intermediate\Build\Win64\FPSGameEditor\Development\FPSGameEditor.uhtmanifest" -LogCmds="loginit warning, logexit warning, logdatabase error" -Unattended -WarningsAsErrors -installed
-  Reflection code generated for FPSGameEditor in 25.4518397 seconds
-  Performing 7 actions (16 in parallel)
-  FPSGameMode.cpp
-  FPSObjectiveActor.cpp
-  FPSExtractionZone.cpp
-  FPSCharacter.gen.cpp
-  FPSCharacter.cpp
-C:\Users\antho\DevLocal\StealthGameProjectBase418\StealthGame\Source\FPSGame\Public\FPSCharacter.h(47): error C2059: syntax error: ')'C:\Users\antho\DevLocal\StealthGameProjectBase418\StealthGame\Source\FPSGame\Public\FPSCharacter.h(47): error C2059: syntax error: ')'
-  
-C:\Users\antho\DevLocal\StealthGameProjectBase418\StealthGame\Source\FPSGame\Public/FPSCharacter.h(47): error C2059: syntax error: ')'
-C:\Users\antho\DevLocal\StealthGameProjectBase418\StealthGame\Source\FPSGame\Public\FPSCharacter.h(47): error C2059: syntax error: ')'
-C:\Users\antho\DevLocal\StealthGameProjectBase418\StealthGame\Source\FPSGame\Public\FPSCharacter.h(47): error C2059: syntax error: ')'
-ERROR : UBT error : Failed to produce item: C:\Users\antho\DevLocal\StealthGameProjectBase418\StealthGame\Binaries\Win64\UE4Editor-FPSGame-4543.dll
-  Total build time: 35.48 seconds (Local executor: 0.00 seconds)
-C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.MakeFile.Targets(44,5): error MSB3075: The command ""C:\Program Files\Epic Games\UE_4.18\Engine\Build\BatchFiles\Build.bat" FPSGameEditor Win64 Development "C:\Users\antho\DevLocal\StealthGameProjectBase418\StealthGame\FPSGame.uproject" -waitmutex" exited with code 5. Please verify that you have sufficient rights to run this command.
+  Target is up to date
+  Deploying FPSGameEditor Win64 Development...
+  Total build time: 49.69 seconds (NoActionsToExecute executor: 0.00 seconds)
