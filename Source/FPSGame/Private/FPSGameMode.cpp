@@ -3,6 +3,7 @@
 #include "FPSGameMode.h"
 #include "FPSHUD.h"
 #include "FPSCharacter.h"
+#include "FPSGameState.h"
 #include "UObject/ConstructorHelpers.h"
 #include "Kismet/GameplayStatics.h"
 
@@ -16,16 +17,22 @@ AFPSGameMode::AFPSGameMode()
 
 	// use our custom HUD class
 	HUDClass = AFPSHUD::StaticClass();
+
+	// From what I understand, StaticClass creates a static instance of the calling class,
+	// regardless of whether or not the class was implemented in a static way, so as 
+	// to allow static, compile-time assignment.
+	//
+	// This allows us to assign the GameMode.GameStateClass variable to our 
+	// FPSGameState implementation even though it hasn't been instantiated yet?
+	GameStateClass = AFPSGameState::StaticClass();
 }
 
 void AFPSGameMode::CompleteMission(APawn* InstigatorPawn, bool bMissionSuccess)
 {
 	if (InstigatorPawn)
 	{
-		//Passing nullptr for the PlayerController pointer disables input for whatever playercontroller
-		//that owns the InstigatorPawn
-		InstigatorPawn->DisableInput(nullptr);
 		AttemptToSetNewViewTarget(Cast<APlayerController>(InstigatorPawn->GetController()));
+		NotifyClientsOfMissionComplete(InstigatorPawn, bMissionSuccess);
 	}
 
 	OnMissionCompleted(InstigatorPawn, bMissionSuccess);
@@ -45,6 +52,15 @@ void AFPSGameMode::AttemptToSetNewViewTarget(APlayerController* PlayerController
 	else
 	{
 		UE_LOG(LogTemp, Warning, TEXT("SpectatingViewpointClass is nullptr. Please update GameMode class with valid subclass. Cannot change specating view target"));
+	}
+}
+
+void AFPSGameMode::NotifyClientsOfMissionComplete(APawn* InstigatorPawn, bool bMissionSuccess)
+{
+	AFPSGameState* GameState = GetGameState<AFPSGameState>();
+	if (GameState)
+	{
+		GameState->MulticastOnMissionComplete(InstigatorPawn, bMissionSuccess);
 	}
 }
 

@@ -24,9 +24,12 @@ protected:
 	TSubclassOf<AActor> SpectatingViewpointClass;
 
 private:
-	void AttemptToSetNewViewTarget(APlayerController* PlayerController);
 	AActor* GetNewViewTarget();
+
+	void AttemptToSetNewViewTarget(APlayerController* PlayerController);
 	void SetNewViewTarget(AActor* NewViewTarget, APlayerController* PlayerController);
+
+	void NotifyClientsOfMissionComplete(APawn* InstigatorPawn, bool bMissionSuccess);
 
 };
 
