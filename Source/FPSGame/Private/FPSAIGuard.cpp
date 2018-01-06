@@ -6,6 +6,7 @@
 #include "AI/Navigation/NavigationSystem.h"
 #include "Perception/PawnSensingComponent.h"
 #include "TimerManager.h"
+#include "Net/UnrealNetwork.h"
 
 const float DEBUG_SPHERE_RADIUS = 32.0f;
 const int DEBUG_SPHERE_NUM_SEGMENTS = 12;
@@ -152,8 +153,19 @@ void AFPSAIGuard::SetGuardState(EAIState NewState)
 	if (GuardState != NewState)
 	{
 		GuardState = NewState;
-		OnStateChanged(GuardState);
+		OnRep_GuardState();
 	}
+}
+
+void AFPSAIGuard::OnRep_GuardState()
+{
+	OnStateChanged(GuardState);
+}
+
+void AFPSAIGuard::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const
+{
+	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
+	DOREPLIFETIME(AFPSAIGuard, GuardState);
 }
 
 void AFPSAIGuard::MoveToNextPatrolPoint()

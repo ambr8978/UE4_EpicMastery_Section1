@@ -27,6 +27,9 @@ public:
 
 	virtual void Tick(float DeltaTime) override;
 protected:
+	UPROPERTY(ReplicatedUsing=OnRep_GuardState)
+	EAIState GuardState;
+
 	virtual void BeginPlay() override;
 
 	UPROPERTY(VisibleAnywhere, Category = "Components")
@@ -41,12 +44,25 @@ protected:
 	UFUNCTION()
 		void OnPawnHeard(APawn* PawnHeard, const FVector& LocationNoiseWasHeard, float Volume);
 
+	//This function will get called when guard state changes for clients only
+	UFUNCTION()
+	void OnRep_GuardState();
+
+	//Apply rules to replicated values (GuardState in this case).
+	//Specifically, we will specify that GuardState should be replicated for all clients.
+	//This function is required in tandem with OnRep_GuardState for the replicated
+	//GuardState to work across clients
+	void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const;
+
 	void SetGuardState(EAIState NewState);
 
 	UFUNCTION(BlueprintImplementableEvent, Category = "AI")
 		void OnStateChanged(EAIState NewState);
 
 protected:
+	FRotator OriginalRotation;
+	FTimerHandle ResetRotationTimer;
+
 	UPROPERTY(EditInstanceOnly, Category = "AI")
 		bool bPatrol;
 
@@ -60,9 +76,6 @@ protected:
 	void MoveToNextPatrolPoint();
 
 private:
-	EAIState GuardState;
-	FRotator OriginalRotation;
-	FTimerHandle ResetRotationTimer;
 
 	void SetupPawnSensingComponent();
 	void SetPawnSensingComponentCallbacks();
