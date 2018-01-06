@@ -7,6 +7,7 @@
 #include "Components/CapsuleComponent.h"
 #include "Kismet/GameplayStatics.h"
 #include "Components/PawnNoiseEmitterComponent.h"
+#include "Net/UnrealNetwork.h"
 
 const float INT_8_BIT_MAX = 255.0f;
 const float DEGREES_360 = 360.0f;
@@ -147,4 +148,15 @@ float AFPSCharacter::GetPitchFromRemoteViewPitch()
 {
 	//This calculation is necessary because the remote view pitch is "compressed" into a uint8 value.
 	return (RemoteViewPitch * DEGREES_360 / INT_8_BIT_MAX);
+}
+
+void AFPSCharacter::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const
+{
+	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
+	DOREPLIFETIME(AFPSCharacter, bIsCarryingObjective);
+
+	//This is a possible optimization to replicating bIsCarryingObjective
+	//COND_OwnerOnly specifies that the client who is now carrying the objective is the ONLY
+	//client that will be notified of the state change.
+	//DOREPLIFETIME_CONDITION(AFPSCharacter, bIsCarryingObjective, COND_OwnerOnly);
 }

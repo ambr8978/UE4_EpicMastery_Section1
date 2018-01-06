@@ -348,3 +348,167 @@ LogInit: Object subsystem initialized
 [2018.01.06-00.07.57:757][  1]LogAssetRegistry: Asset discovery search completed in 26.0407 seconds
 [2018.01.06-00.07.57:773][  1]LogCollectionManager: Rebuilt the object cache for 0 collections in 0.000000 seconds (found 0 objects)
 [2018.01.06-00.07.57:774][  1]LogCollectionManager: Fixed up redirectors for 0 collections in 0.000687 seconds (updated 0 objects)
+[2018.01.06-00.35.40:050][ 25]LogVSAccessor: Warning: Couldn't access Visual Studio
+[2018.01.06-00.35.40:165][ 25]Candidate modules for hot reload:
+[2018.01.06-00.35.40:165][ 25]  FPSGame
+[2018.01.06-00.35.40:168][ 25]Launching UnrealBuildTool... [C:/Program Files/Epic Games/UE_4.18/Engine/Binaries/DotNET/UnrealBuildTool.exe FPSGame -ModuleWithSuffix FPSGame 1757 Win64 Development -editorrecompile -canskiplink "C:/Users/antho/DevLocal/StealthGameProjectBase418/StealthGame/FPSGame.uproject" ]
+[2018.01.06-00.35.40:173][ 25]Warning: Starting HotReload took  0.2s.
+[2018.01.06-00.36.30:102][948]LogRenderer: Reallocating scene render targets to support 1108x492 Format 10 NumSamples 1 (Frame:870).
+[2018.01.06-00.36.30:273][949]LogRenderer: Reallocating scene render targets to support 1144x492 Format 10 NumSamples 1 (Frame:872).
+[2018.01.06-00.36.30:359][950]LogRenderer: Reallocating scene render targets to support 1212x492 Format 10 NumSamples 1 (Frame:874).
+[2018.01.06-00.36.30:428][951]LogRenderer: Reallocating scene render targets to support 1220x492 Format 10 NumSamples 1 (Frame:876).
+[2018.01.06-00.37.03:943][537]CompilerResultsLog: New page: Compilation - Jan 5, 2018, 10:37:03 AM
+[2018.01.06-00.37.03:984][537]CompilerResultsLog: Using 'git status' to determine working set for adaptive non-unity build.
+[2018.01.06-00.37.03:985][537]CompilerResultsLog: Creating makefile for hot reloading FPSGame (modules to compile have changed)
+[2018.01.06-00.37.03:985][537]CompilerResultsLog: Compiling game modules for hot reload
+[2018.01.06-00.37.03:985][537]CompilerResultsLog: Parsing headers for FPSGameEditor
+[2018.01.06-00.37.03:985][537]CompilerResultsLog:   Running UnrealHeaderTool "C:\Users\antho\DevLocal\StealthGameProjectBase418\StealthGame\FPSGame.uproject" "C:\Users\antho\DevLocal\StealthGameProjectBase418\StealthGame\Intermediate\Build\Win64\FPSGameEditor\Development\FPSGameEditor.uhtmanifest" -LogCmds="loginit warning, logexit warning, logdatabase error" -Unattended -WarningsAsErrors -installed
+[2018.01.06-00.37.04:011][537]CompilerResultsLog: Reflection code generated for FPSGameEditor in 14.8301105 seconds
+[2018.01.06-00.37.04:012][537]CompilerResultsLog: Performing 5 actions (16 in parallel)
+[2018.01.06-00.37.04:012][537]CompilerResultsLog: FPSGame.init.gen.cpp
+[2018.01.06-00.37.04:012][537]CompilerResultsLog: FPSAIGuard.gen.cpp
+[2018.01.06-00.37.04:012][537]CompilerResultsLog: FPSAIGuard.cpp
+[2018.01.06-00.37.04:012][537]CompilerResultsLog: [4/5] Link UE4Editor-FPSGame-1757.dll
+[2018.01.06-00.37.04:013][537]CompilerResultsLog: [5/5] Link UE4Editor-FPSGame-1757.lib
+[2018.01.06-00.37.04:013][537]CompilerResultsLog:    Creating library C:\Users\antho\DevLocal\StealthGameProjectBase418\StealthGame\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-FPSGame-1757.lib and object C:\Users\antho\DevLocal\StealthGameProjectBase418\StealthGame\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-FPSGame-1757.exp
+[2018.01.06-00.37.04:013][537]CompilerResultsLog:    Creating library C:\Users\antho\DevLocal\StealthGameProjectBase418\StealthGame\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-FPSGame-1757.suppressed.lib and object C:\Users\antho\DevLocal\StealthGameProjectBase418\StealthGame\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-FPSGame-1757.suppressed.exp
+[2018.01.06-00.37.04:014][537]CompilerResultsLog: Total build time: 82.89 seconds (Local executor: 12.59 seconds)
+[2018.01.06-00.37.04:015][537]LogMainFrame: MainFrame: Module compiling took 83.961 seconds
+[2018.01.06-00.37.06:872][537]LogClass: Could not find existing class FPSAIGuard in package /Script/FPSGame for HotReload, assuming new class
+[2018.01.06-00.37.06:875][537]LogClass: Function OnPawnHeard is new.
+[2018.01.06-00.37.06:875][537]LogClass: Function OnPawnSeen is new.
+[2018.01.06-00.37.06:875][537]LogClass: Function OnRep_GuardState is new.
+[2018.01.06-00.37.06:875][537]LogClass: Function ResetRotationToOriginalRotation is new.
+[2018.01.06-00.37.06:975][537]LogClass: EAIState HotReload.
+[2018.01.06-00.37.07:227][537]LogHotReload: Re-instancing FPSAIGuard after hot-reload.
+[2018.01.06-00.37.08:918][537]LogHotReload: Re-instancing FPSBlackHole after hot-reload.
+[2018.01.06-00.37.08:982][537]LogHotReload: Re-instancing FPSExtractionZone after hot-reload.
+[2018.01.06-00.37.09:205][537]LogHotReload: Re-instancing FPSLaunchPad after hot-reload.
+[2018.01.06-00.37.09:468][537]LogContentBrowser: Native class hierarchy updated for 'FPSGame' in 0.0062 seconds. Added 9 classes and 3 folders.
+[2018.01.06-00.37.09:470][537]Display: HotReload successful (5 functions remapped  0 scriptstructs remapped)
+[2018.01.06-00.37.09:724][537]LogContentBrowser: Native class hierarchy populated in 0.0269 seconds. Added 2374 classes and 526 folders.
+[2018.01.06-00.37.09:724][537]Display: HotReload took 89.7s.
+[2018.01.06-00.37.21:988][704]LogTemp: Repeating last play command: Selected Viewport
+[2018.01.06-00.37.22:137][704]LogBlueprintUserMessages: Early PlayInEditor Detection: Level '/Game/Maps/FirstPersonExampleMap.FirstPersonExampleMap:PersistentLevel' has LevelScriptBlueprint '/Game/Maps/FirstPersonExampleMap.FirstPersonExampleMap:PersistentLevel.FirstPersonExampleMap' with GeneratedClass '/Game/Maps/FirstPersonExampleMap.FirstPersonExampleMap_C' with ClassGeneratedBy '/Game/Maps/FirstPersonExampleMap.FirstPersonExampleMap:PersistentLevel.FirstPersonExampleMap'
+[2018.01.06-00.37.22:140][704]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2018.01.06-00.37.22:163][704]PIE: New page: PIE session: FirstPersonExampleMap (Jan 5, 2018, 10:37:22 AM)
+[2018.01.06-00.37.22:165][704]LogPlayLevel: Creating play world package: /Game/Maps/UEDPIE_0_FirstPersonExampleMap
+[2018.01.06-00.37.22:424][704]LogPlayLevel: PIE: StaticDuplicateObject took: (0.258966s)
+[2018.01.06-00.37.22:469][704]LogAIModule: Creating AISystem for world FirstPersonExampleMap
+[2018.01.06-00.37.22:477][704]LogPlayLevel: PIE: World Init took: (0.051873s)
+[2018.01.06-00.37.22:477][704]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/Maps/FirstPersonExampleMap.FirstPersonExampleMap to /Game/Maps/UEDPIE_0_FirstPersonExampleMap.FirstPersonExampleMap (0.312543s)
+[2018.01.06-00.37.22:524][704]LogInit: XAudio2 using 'Speakers (Sound Blaster Recon3Di)' : 2 channels at 48 kHz using 32 bits per sample (channel mask 0x3)
+[2018.01.06-00.37.22:562][704]LogInit: FAudioDevice initialized.
+[2018.01.06-00.37.22:622][704]LogLoad: Game class is 'BP_GameMode_C'
+[2018.01.06-00.37.22:637][704]LogWorld: Bringing World /Game/Maps/UEDPIE_0_FirstPersonExampleMap.FirstPersonExampleMap up for play (max tick rate 60) at 2018.01.05-17.37.22
+[2018.01.06-00.37.22:666][704]LogWorld: Bringing up level for play took: 0.035652
+[2018.01.06-00.37.23:005][704]LogContentBrowser: Native class hierarchy updated for 'MovieSceneCapture' in 0.0011 seconds. Added 11 classes and 0 folders.
+[2018.01.06-00.37.23:063][704]PIE: Play in editor start time for /Game/Maps/UEDPIE_0_FirstPersonExampleMap 0.605
+[2018.01.06-00.37.23:086][704]LogBlueprintUserMessages: Late PlayInEditor Detection: Level '/Game/Maps/FirstPersonExampleMap.FirstPersonExampleMap:PersistentLevel' has LevelScriptBlueprint '/Game/Maps/FirstPersonExampleMap.FirstPersonExampleMap:PersistentLevel.FirstPersonExampleMap' with GeneratedClass '/Game/Maps/FirstPersonExampleMap.FirstPersonExampleMap_C' with ClassGeneratedBy '/Game/Maps/FirstPersonExampleMap.FirstPersonExampleMap:PersistentLevel.FirstPersonExampleMap'
+[2018.01.06-00.37.26:887][921]LogBlueprintUserMessages: Early EndPlayMap Detection: Level '/Game/Maps/FirstPersonExampleMap.FirstPersonExampleMap:PersistentLevel' has LevelScriptBlueprint '/Game/Maps/FirstPersonExampleMap.FirstPersonExampleMap:PersistentLevel.FirstPersonExampleMap' with GeneratedClass '/Game/Maps/FirstPersonExampleMap.FirstPersonExampleMap_C' with ClassGeneratedBy '/Game/Maps/FirstPersonExampleMap.FirstPersonExampleMap:PersistentLevel.FirstPersonExampleMap'
+[2018.01.06-00.37.26:932][921]LogBlueprintUserMessages: Late EndPlayMap Detection: Level '/Game/Maps/FirstPersonExampleMap.FirstPersonExampleMap:PersistentLevel' has LevelScriptBlueprint '/Game/Maps/FirstPersonExampleMap.FirstPersonExampleMap:PersistentLevel.FirstPersonExampleMap' with GeneratedClass '/Game/Maps/FirstPersonExampleMap.FirstPersonExampleMap_C' with ClassGeneratedBy '/Game/Maps/FirstPersonExampleMap.FirstPersonExampleMap:PersistentLevel.FirstPersonExampleMap'
+[2018.01.06-00.37.29:995][ 83]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (EditorCube8)
+[2018.01.06-00.37.33:835][232]LogTemp: Repeating last play command: Selected Viewport
+[2018.01.06-00.37.33:862][232]LogBlueprintUserMessages: Early PlayInEditor Detection: Level '/Game/Maps/FirstPersonExampleMap.FirstPersonExampleMap:PersistentLevel' has LevelScriptBlueprint '/Game/Maps/FirstPersonExampleMap.FirstPersonExampleMap:PersistentLevel.FirstPersonExampleMap' with GeneratedClass '/Game/Maps/FirstPersonExampleMap.FirstPersonExampleMap_C' with ClassGeneratedBy '/Game/Maps/FirstPersonExampleMap.FirstPersonExampleMap:PersistentLevel.FirstPersonExampleMap'
+[2018.01.06-00.37.33:863][232]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2018.01.06-00.37.33:863][232]PIE: New page: PIE session: FirstPersonExampleMap (Jan 5, 2018, 10:37:33 AM)
+[2018.01.06-00.37.33:864][232]LogPlayLevel: Creating play world package: /Game/Maps/UEDPIE_0_FirstPersonExampleMap
+[2018.01.06-00.37.33:895][232]LogPlayLevel: PIE: StaticDuplicateObject took: (0.030568s)
+[2018.01.06-00.37.33:897][232]LogAIModule: Creating AISystem for world FirstPersonExampleMap
+[2018.01.06-00.37.33:898][232]LogPlayLevel: PIE: World Init took: (0.003035s)
+[2018.01.06-00.37.33:899][232]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/Maps/FirstPersonExampleMap.FirstPersonExampleMap to /Game/Maps/UEDPIE_0_FirstPersonExampleMap.FirstPersonExampleMap (0.034921s)
+[2018.01.06-00.37.33:917][232]LogInit: XAudio2 using 'Speakers (Sound Blaster Recon3Di)' : 2 channels at 48 kHz using 32 bits per sample (channel mask 0x3)
+[2018.01.06-00.37.33:925][232]LogInit: FAudioDevice initialized.
+[2018.01.06-00.37.33:959][232]LogLoad: Game class is 'BP_GameMode_C'
+[2018.01.06-00.37.33:963][232]LogWorld: Bringing World /Game/Maps/UEDPIE_0_FirstPersonExampleMap.FirstPersonExampleMap up for play (max tick rate 60) at 2018.01.05-17.37.33
+[2018.01.06-00.37.33:964][232]LogWorld: Bringing up level for play took: 0.003400
+[2018.01.06-00.37.33:966][232]PIE: Play in editor start time for /Game/Maps/UEDPIE_0_FirstPersonExampleMap -0.492
+[2018.01.06-00.37.33:966][232]LogBlueprintUserMessages: Late PlayInEditor Detection: Level '/Game/Maps/FirstPersonExampleMap.FirstPersonExampleMap:PersistentLevel' has LevelScriptBlueprint '/Game/Maps/FirstPersonExampleMap.FirstPersonExampleMap:PersistentLevel.FirstPersonExampleMap' with GeneratedClass '/Game/Maps/FirstPersonExampleMap.FirstPersonExampleMap_C' with ClassGeneratedBy '/Game/Maps/FirstPersonExampleMap.FirstPersonExampleMap:PersistentLevel.FirstPersonExampleMap'
+[2018.01.06-00.37.48:787][113]LogBlueprintUserMessages: Early EndPlayMap Detection: Level '/Game/Maps/FirstPersonExampleMap.FirstPersonExampleMap:PersistentLevel' has LevelScriptBlueprint '/Game/Maps/FirstPersonExampleMap.FirstPersonExampleMap:PersistentLevel.FirstPersonExampleMap' with GeneratedClass '/Game/Maps/FirstPersonExampleMap.FirstPersonExampleMap_C' with ClassGeneratedBy '/Game/Maps/FirstPersonExampleMap.FirstPersonExampleMap:PersistentLevel.FirstPersonExampleMap'
+[2018.01.06-00.37.48:830][113]LogBlueprintUserMessages: Late EndPlayMap Detection: Level '/Game/Maps/FirstPersonExampleMap.FirstPersonExampleMap:PersistentLevel' has LevelScriptBlueprint '/Game/Maps/FirstPersonExampleMap.FirstPersonExampleMap:PersistentLevel.FirstPersonExampleMap' with GeneratedClass '/Game/Maps/FirstPersonExampleMap.FirstPersonExampleMap_C' with ClassGeneratedBy '/Game/Maps/FirstPersonExampleMap.FirstPersonExampleMap:PersistentLevel.FirstPersonExampleMap'
+[2018.01.06-00.37.54:185][232]LogTemp: Repeating last play command: Selected Viewport
+[2018.01.06-00.37.54:209][232]LogBlueprintUserMessages: Early PlayInEditor Detection: Level '/Game/Maps/FirstPersonExampleMap.FirstPersonExampleMap:PersistentLevel' has LevelScriptBlueprint '/Game/Maps/FirstPersonExampleMap.FirstPersonExampleMap:PersistentLevel.FirstPersonExampleMap' with GeneratedClass '/Game/Maps/FirstPersonExampleMap.FirstPersonExampleMap_C' with ClassGeneratedBy '/Game/Maps/FirstPersonExampleMap.FirstPersonExampleMap:PersistentLevel.FirstPersonExampleMap'
+[2018.01.06-00.37.54:210][232]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2018.01.06-00.37.54:211][232]PIE: New page: PIE session: FirstPersonExampleMap (Jan 5, 2018, 10:37:54 AM)
+[2018.01.06-00.37.54:211][232]LogPlayLevel: Creating play world package: /Game/Maps/UEDPIE_1_FirstPersonExampleMap
+[2018.01.06-00.37.54:235][232]LogPlayLevel: PIE: StaticDuplicateObject took: (0.023908s)
+[2018.01.06-00.37.54:236][232]LogAIModule: Creating AISystem for world FirstPersonExampleMap
+[2018.01.06-00.37.54:237][232]LogPlayLevel: PIE: World Init took: (0.002216s)
+[2018.01.06-00.37.54:238][232]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/Maps/FirstPersonExampleMap.FirstPersonExampleMap to /Game/Maps/UEDPIE_1_FirstPersonExampleMap.FirstPersonExampleMap (0.027212s)
+[2018.01.06-00.37.54:253][232]LogLoad: Game class is 'BP_GameMode_C'
+[2018.01.06-00.37.54:257][232]LogWorld: Bringing World /Game/Maps/UEDPIE_1_FirstPersonExampleMap.FirstPersonExampleMap up for play (max tick rate 60) at 2018.01.05-17.37.54
+[2018.01.06-00.37.54:261][232]LogWorld: Bringing up level for play took: 0.006338
+[2018.01.06-00.37.54:263][232]LogTemp: Display: ParseSettings for GameNetDriver
+[2018.01.06-00.37.54:265][232]LogTemp: Display: ParseSettings for IpNetDriver_0
+[2018.01.06-00.37.54:265][232]LogTemp: Display: ParseSettings for GameNetDriver
+[2018.01.06-00.37.54:266][232]LogInit: WinSock: Socket queue 131072 / 131072
+[2018.01.06-00.37.54:270][232]LogInit: WinSock: I am DESKTOP-96GJUGK (192.168.0.18:0)
+[2018.01.06-00.37.54:272][232]PacketHandlerLog: Loaded PacketHandler component: Engine.EngineHandlerComponentFactory (StatelessConnectHandlerComponent)
+[2018.01.06-00.37.54:273][232]LogNet: GameNetDriver IpNetDriver_0 IpNetDriver listening on port 17777
+[2018.01.06-00.37.54:273][232]PIE: Play in editor start time for /Game/Maps/UEDPIE_1_FirstPersonExampleMap -0.184
+[2018.01.06-00.37.54:274][232]PIE: New page: PIE session: FirstPersonExampleMap (Jan 5, 2018, 10:37:54 AM)
+[2018.01.06-00.37.54:350][232]LogInit: XAudio2 using 'Speakers (Sound Blaster Recon3Di)' : 2 channels at 48 kHz using 32 bits per sample (channel mask 0x3)
+[2018.01.06-00.37.54:357][232]LogInit: FAudioDevice initialized.
+[2018.01.06-00.37.54:393][232]LogNet: Browse: 127.0.0.1:17777//Game/Maps/FirstPersonExampleMap
+[2018.01.06-00.37.54:393][232]LogTemp: Display: ParseSettings for GameNetDriver
+[2018.01.06-00.37.54:393][232]LogTemp: Display: ParseSettings for IpNetDriver_1
+[2018.01.06-00.37.54:393][232]LogTemp: Display: ParseSettings for PendingNetDriver
+[2018.01.06-00.37.54:394][232]LogInit: WinSock: Socket queue 32768 / 32768
+[2018.01.06-00.37.54:394][232]PacketHandlerLog: Loaded PacketHandler component: Engine.EngineHandlerComponentFactory (StatelessConnectHandlerComponent)
+[2018.01.06-00.37.54:405][232]LogNet: Game client on port 17777, rate 10000
+[2018.01.06-00.37.54:406][232]PIE: Play in editor start time for /Game/Maps/FirstPersonExampleMap -0.052
+[2018.01.06-00.37.54:411][232]LogBlueprintUserMessages: Late PlayInEditor Detection: Level '/Game/Maps/FirstPersonExampleMap.FirstPersonExampleMap:PersistentLevel' has LevelScriptBlueprint '/Game/Maps/FirstPersonExampleMap.FirstPersonExampleMap:PersistentLevel.FirstPersonExampleMap' with GeneratedClass '/Game/Maps/FirstPersonExampleMap.FirstPersonExampleMap_C' with ClassGeneratedBy '/Game/Maps/FirstPersonExampleMap.FirstPersonExampleMap:PersistentLevel.FirstPersonExampleMap'
+[2018.01.06-00.37.54:429][232]LogNet: NotifyAcceptingConnection accepted from: 127.0.0.1:50712
+[2018.01.06-00.37.54:430][232]LogHandshake: SendConnectChallenge. Timestamp: 0.036466, Cookie: 213230104094255210134214062158231244177238252137039244085081
+[2018.01.06-00.37.54:461][232]LogHandshake: SendChallengeResponse. Timestamp: 0.036466, Cookie: 213230104094255210134214062158231244177238252137039244085081
+[2018.01.06-00.37.54:474][233]LogNet: NotifyAcceptingConnection accepted from: 127.0.0.1:50712
+[2018.01.06-00.37.54:474][233]LogHandshake: SendChallengeAck. InCookie: 213230104094255210134214062158231244177238252137039244085081
+[2018.01.06-00.37.54:475][233]LogNet: Server accepting post-challenge connection from: 127.0.0.1:50712
+[2018.01.06-00.37.54:475][233]PacketHandlerLog: Loaded PacketHandler component: Engine.EngineHandlerComponentFactory (StatelessConnectHandlerComponent)
+[2018.01.06-00.37.54:476][233]LogNet: NotifyAcceptedConnection: Name: FirstPersonExampleMap, TimeStamp: 01/05/18 17:37:54, [UNetConnection] RemoteAddr: 127.0.0.1:50712, Name: IpConnection_1, Driver: GameNetDriver IpNetDriver_0, IsServer: YES, PC: NULL, Owner: NULL
+[2018.01.06-00.37.54:476][233]LogNet: AddClientConnection: Added client connection: [UNetConnection] RemoteAddr: 127.0.0.1:50712, Name: IpConnection_1, Driver: GameNetDriver IpNetDriver_0, IsServer: YES, PC: NULL, Owner: NULL
+[2018.01.06-00.37.54:478][233]LogNetVersion: FPSGame 1.0.0.0, NetCL: 3709383, EngineNetVer: 2, GameNetVer: 0 (Checksum: 1014107486)
+[2018.01.06-00.37.54:478][233]LogNet: UPendingNetGame::SendInitialJoin: Sending hello. [UNetConnection] RemoteAddr: 127.0.0.1:17777, Name: IpConnection_0, Driver: PendingNetDriver IpNetDriver_1, IsServer: NO, PC: NULL, Owner: NULL
+[2018.01.06-00.37.54:524][234]LogNet: NotifyAcceptingChannel Control 0 server World /Game/Maps/UEDPIE_1_FirstPersonExampleMap.FirstPersonExampleMap: Accepted
+[2018.01.06-00.37.54:525][234]LogNet: Remote platform little endian=1
+[2018.01.06-00.37.54:526][234]LogNet: This platform little endian=1
+[2018.01.06-00.37.54:540][235]LogNet: Login request: /Game/Maps/FirstPersonExampleMap userId: Invalid
+[2018.01.06-00.37.54:542][235]LogNet: Welcomed by server (Level: /Game/Maps/UEDPIE_1_FirstPersonExampleMap, Game: /Game/Blueprints/BP_GameMode.BP_GameMode_C)
+[2018.01.06-00.37.54:543][235]LogLoad: LoadMap: 127.0.0.1:17777//Game/Maps/UEDPIE_1_FirstPersonExampleMap?game=/Game/Blueprints/BP_GameMode.BP_GameMode_C
+[2018.01.06-00.37.54:583][235]LogAIModule: Creating AISystem for world FirstPersonExampleMap
+[2018.01.06-00.37.54:584][235]LogTemp: Display: ParseSettings for GameNetDriver
+[2018.01.06-00.37.54:588][235]LogWorld: Bringing World /Game/Maps/UEDPIE_2_FirstPersonExampleMap.FirstPersonExampleMap up for play (max tick rate 60) at 2018.01.05-17.37.54
+[2018.01.06-00.37.54:589][235]LogWorld: Bringing up level for play took: 0.002549
+[2018.01.06-00.37.54:589][235]LogLoad: Took 0.046387 seconds to LoadMap(/Game/Maps/UEDPIE_1_FirstPersonExampleMap)
+[2018.01.06-00.37.54:594][236]LogNet: Client netspeed is 10000
+[2018.01.06-00.37.54:594][236]LogNet: Join request: /Game/Maps/FirstPersonExampleMap?SplitscreenCount=1
+[2018.01.06-00.37.54:601][236]LogNet: Join succeeded: 258
+[2018.01.06-00.38.05:094][865]LogScript: Warning: Accessed None trying to read property CallFunc_Create_ReturnValue
+	BP_GameMode_C /Game/Maps/UEDPIE_1_FirstPersonExampleMap.FirstPersonExampleMap:PersistentLevel.BP_GameMode_C_0
+	Function /Game/Blueprints/BP_GameMode.BP_GameMode_C:ExecuteUbergraph_BP_GameMode:008F
+[2018.01.06-00.38.05:193][865]PIE: Error: Blueprint Runtime Error: Accessed None trying to read property CallFunc_Create_ReturnValue from function: 'ExecuteUbergraph_BP_GameMode' from node: Add to Viewport in graph: EventGraph in object: BP_GameMode with description: Accessed None trying to read property CallFunc_Create_ReturnValue
+[2018.01.06-00.38.08:270][ 50]LogBlueprintUserMessages: Early EndPlayMap Detection: Level '/Game/Maps/FirstPersonExampleMap.FirstPersonExampleMap:PersistentLevel' has LevelScriptBlueprint '/Game/Maps/FirstPersonExampleMap.FirstPersonExampleMap:PersistentLevel.FirstPersonExampleMap' with GeneratedClass '/Game/Maps/FirstPersonExampleMap.FirstPersonExampleMap_C' with ClassGeneratedBy '/Game/Maps/FirstPersonExampleMap.FirstPersonExampleMap:PersistentLevel.FirstPersonExampleMap'
+[2018.01.06-00.38.08:309][ 50]LogBlueprintUserMessages: Late EndPlayMap Detection: Level '/Game/Maps/FirstPersonExampleMap.FirstPersonExampleMap:PersistentLevel' has LevelScriptBlueprint '/Game/Maps/FirstPersonExampleMap.FirstPersonExampleMap:PersistentLevel.FirstPersonExampleMap' with GeneratedClass '/Game/Maps/FirstPersonExampleMap.FirstPersonExampleMap_C' with ClassGeneratedBy '/Game/Maps/FirstPersonExampleMap.FirstPersonExampleMap:PersistentLevel.FirstPersonExampleMap'
+[2018.01.06-00.38.08:320][ 50]LogNet: UChannel::CleanUp: ChIndex == 0. Closing connection. [UChannel] ChIndex: 0, Closing: 0 [UNetConnection] RemoteAddr: 127.0.0.1:50712, Name: IpConnection_1, Driver: GameNetDriver IpNetDriver_0, IsServer: YES, PC: PlayerController_0, Owner: PlayerController_0
+[2018.01.06-00.38.08:320][ 50]LogNet: UNetConnection::Close: [UNetConnection] RemoteAddr: 127.0.0.1:50712, Name: IpConnection_1, Driver: GameNetDriver IpNetDriver_0, IsServer: YES, PC: PlayerController_0, Owner: PlayerController_0, Channels: 11, Time: 2018.01.06-00.38.08
+[2018.01.06-00.38.08:321][ 50]LogNet: UChannel::Close: Sending CloseBunch. ChIndex == 0. Name: [UChannel] ChIndex: 0, Closing: 0 [UNetConnection] RemoteAddr: 127.0.0.1:50712, Name: IpConnection_1, Driver: GameNetDriver IpNetDriver_0, IsServer: YES, PC: PlayerController_0, Owner: PlayerController_0
+[2018.01.06-00.38.08:321][ 50]LogNet: UChannel::CleanUp: ChIndex == 0. Closing connection. [UChannel] ChIndex: 0, Closing: 0 [UNetConnection] RemoteAddr: 127.0.0.1:17777, Name: IpConnection_0, Driver: GameNetDriver IpNetDriver_1, IsServer: NO, PC: PlayerController_1, Owner: PlayerController_1
+[2018.01.06-00.38.08:321][ 50]LogNet: UNetConnection::Close: [UNetConnection] RemoteAddr: 127.0.0.1:17777, Name: IpConnection_0, Driver: GameNetDriver IpNetDriver_1, IsServer: NO, PC: PlayerController_1, Owner: PlayerController_1, Channels: 11, Time: 2018.01.06-00.38.08
+[2018.01.06-00.38.08:321][ 50]LogNet: UChannel::Close: Sending CloseBunch. ChIndex == 0. Name: [UChannel] ChIndex: 0, Closing: 0 [UNetConnection] RemoteAddr: 127.0.0.1:17777, Name: IpConnection_0, Driver: GameNetDriver IpNetDriver_1, IsServer: NO, PC: PlayerController_1, Owner: PlayerController_1
+[2018.01.06-00.38.08:327][ 50]LogExit: GameNetDriver None shut down
+[2018.01.06-00.38.08:328][ 50]LogExit: GameNetDriver None shut down
+[2018.01.06-00.38.10:005][ 92]LogSlate: Took 0.004690 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/Roboto-Light.ttf' (159K)
+[2018.01.06-00.38.10:499][ 92]LogSavePackage: Save=230.19ms
+[2018.01.06-00.38.10:499][ 92]LogSavePackage: Moving '../../../../../../Users/antho/DevLocal/StealthGameProjectBase418/StealthGame/Saved/FirstPersonExampleMapA29010A2498952A0260260B12F2A9D11.tmp' to '../../../../../../Users/antho/DevLocal/StealthGameProjectBase418/StealthGame/Content/Maps/FirstPersonExampleMap.umap'
+[2018.01.06-00.38.10:509][ 92]LogSavePackage: Display: Finished SavePackage ../../../../../../Users/antho/DevLocal/StealthGameProjectBase418/StealthGame/Content/Maps/FirstPersonExampleMap.umap
+[2018.01.06-00.38.10:584][ 92]LogFileHelpers: Saving map 'FirstPersonExampleMap' took 0.486
+[2018.01.06-00.50.15:428][714]LogSlate: Took 0.007105 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/Roboto-Light.ttf' (159K)
+[2018.01.06-00.50.32:133][907]LogSlate: Took 0.006870 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/Roboto-Regular.ttf' (155K)
+[2018.01.06-00.50.33:687][907]LogContentBrowser: Native class hierarchy updated for 'BlueprintGraph' in 0.0018 seconds. Added 116 classes and 0 folders.
+[2018.01.06-00.50.37:606][907]LogSlate: Took 0.006575 seconds to synchronously load lazily loaded font '../../../Engine/Content/Editor/Slate/Fonts/Roboto-BoldCondensed.ttf' (158K)
+[2018.01.06-00.50.37:904][908]LogSlate: Took 0.007394 seconds to synchronously load lazily loaded font '../../../Engine/Content/Editor/Slate/Fonts/Roboto-Italic.ttf' (157K)
+[2018.01.06-00.50.51:310][ 39]BlueprintLog: New page: Compile BP_GameMode
+[2018.01.06-00.50.51:700][ 39]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/Blueprints/BP_GameMode" FILE="../../../../../../Users/antho/DevLocal/StealthGameProjectBase418/StealthGame/Content/Blueprints/BP_GameMode.uasset" SILENT=true
+[2018.01.06-00.50.51:758][ 39]LogSavePackage: Save=37.05ms
+[2018.01.06-00.50.51:758][ 39]LogSavePackage: Moving '../../../../../../Users/antho/DevLocal/StealthGameProjectBase418/StealthGame/Saved/BP_GameMode09F8779B4078C0CCCB86C482D3E14514.tmp' to '../../../../../../Users/antho/DevLocal/StealthGameProjectBase418/StealthGame/Content/Blueprints/BP_GameMode.uasset'
+[2018.01.06-00.50.51:763][ 39]LogSavePackage: Display: Finished SavePackage ../../../../../../Users/antho/DevLocal/StealthGameProjectBase418/StealthGame/Content/Blueprints/BP_GameMode.uasset
