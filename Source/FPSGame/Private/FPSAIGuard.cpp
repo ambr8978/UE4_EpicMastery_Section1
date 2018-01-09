@@ -77,15 +77,6 @@ void AFPSAIGuard::OnPawnSeen(APawn* PawnSeen)
 	{
 		GameMode->CompleteMission(PawnSeen, false);
 	}
-
-	DrawDebugSphere(
-		GetWorld(),
-		PawnSeen->GetActorLocation(),
-		DEBUG_SPHERE_RADIUS,
-		DEBUG_SPHERE_NUM_SEGMENTS,
-		DEBUG_SPHERE_COLOR_SEEN,
-		DEBUG_SPHERE_PERSISTENT_LINES,
-		DEBUG_SPHERE_LIFE_TIME_SEC);
 }
 
 void AFPSAIGuard::OnPawnHeard(APawn* PawnHeard, const FVector& LocationNoiseWasHeard, float Volume)
@@ -97,15 +88,6 @@ void AFPSAIGuard::OnPawnHeard(APawn* PawnHeard, const FVector& LocationNoiseWasH
 
 	SetGuardState(EAIState::Suspicious);
 	StopMovement();
-
-	DrawDebugSphere(
-		GetWorld(),
-		LocationNoiseWasHeard,
-		DEBUG_SPHERE_RADIUS,
-		DEBUG_SPHERE_NUM_SEGMENTS,
-		DEBUG_SPHERE_COLOR_HEARD,
-		DEBUG_SPHERE_PERSISTENT_LINES,
-		DEBUG_SPHERE_LIFE_TIME_SEC);
 
 	SetActorToNewRotation(LocationNoiseWasHeard);
 	StartResetOrientationTimer();
