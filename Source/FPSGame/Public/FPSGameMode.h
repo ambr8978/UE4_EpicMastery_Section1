@@ -26,7 +26,7 @@ protected:
 private:
 	AActor* GetNewViewTarget();
 
-	void AttemptToSetNewViewTarget(APlayerController* PlayerController);
+	void AttemptToSetNewViewTargetForAllPlayerControllers(APlayerController* PlayerController);
 	void SetNewViewTarget(AActor* NewViewTarget, APlayerController* PlayerController);
 
 	void NotifyClientsOfMissionComplete(APawn* InstigatorPawn, bool bMissionSuccess);

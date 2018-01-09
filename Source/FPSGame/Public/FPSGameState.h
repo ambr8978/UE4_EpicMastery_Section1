@@ -4,6 +4,8 @@
 #include "GameFramework/GameStateBase.h"
 #include "FPSGameState.generated.h"
 
+class AFPSPlayerController;
+
 UCLASS()
 class FPSGAME_API AFPSGameState : public AGameStateBase
 {
@@ -16,5 +18,6 @@ public:
 	UFUNCTION(NetMulticast, Reliable)
 	void MulticastOnMissionComplete(APawn* InstiagtorPawn, bool bMissionSuccess);	
 
-	void DisableInputForAllPawns();
+	void CallMissionCompleteForAllPlayerControllers(APawn* InstigatorPawn, bool bMissionSuccess);
+	void DisablePlayerControllerPawnInput(AFPSPlayerController* PlayerController);
 };

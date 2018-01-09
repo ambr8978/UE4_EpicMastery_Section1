@@ -31,7 +31,7 @@ void AFPSGameMode::CompleteMission(APawn* InstigatorPawn, bool bMissionSuccess)
 {
 	if (InstigatorPawn)
 	{
-		AttemptToSetNewViewTarget(Cast<APlayerController>(InstigatorPawn->GetController()));
+		AttemptToSetNewViewTargetForAllPlayerControllers(Cast<APlayerController>(InstigatorPawn->GetController()));
 		NotifyClientsOfMissionComplete(InstigatorPawn, bMissionSuccess);
 	}
 
@@ -39,14 +39,20 @@ void AFPSGameMode::CompleteMission(APawn* InstigatorPawn, bool bMissionSuccess)
 
 }
 
-void AFPSGameMode::AttemptToSetNewViewTarget(APlayerController* PlayerController)
+void AFPSGameMode::AttemptToSetNewViewTargetForAllPlayerControllers(APlayerController* PlayerController)
 {
 	if (SpectatingViewpointClass != nullptr)
 	{
 		AActor* NewViewTarget = GetNewViewTarget();
 		if (NewViewTarget != nullptr)
 		{
-			SetNewViewTarget(NewViewTarget, PlayerController);
+			for (FConstPlayerControllerIterator PlayerControllerItr = GetWorld()->GetPlayerControllerIterator();
+				PlayerControllerItr;
+				PlayerControllerItr++)
+			{
+				APlayerController* PlayerController = PlayerControllerItr->Get();
+				SetNewViewTarget(NewViewTarget, PlayerController);
+			}
 		}
 	}
 	else

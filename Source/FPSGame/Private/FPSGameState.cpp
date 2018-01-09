@@ -1,22 +1,34 @@
 #include "FPSGameState.h"
 #include "Runtime/Engine/Classes/Engine/World.h"
+#include "FPSPlayerController.h"
 
 void AFPSGameState::MulticastOnMissionComplete_Implementation(APawn* InstigatorPawn, bool bMissionSuccess)
 {
-	DisableInputForAllPawns();
+	CallMissionCompleteForAllPlayerControllers(InstigatorPawn, bMissionSuccess);
 }
 
-void AFPSGameState::DisableInputForAllPawns()
+void AFPSGameState::CallMissionCompleteForAllPlayerControllers(APawn* InstigatorPawn, bool bMissionSuccess)
 {
-	for (FConstPawnIterator PawnItr = GetWorld()->GetPawnIterator(); PawnItr; PawnItr++)
+	for (FConstPlayerControllerIterator PlayerControllerItr = GetWorld()->GetPlayerControllerIterator();
+		PlayerControllerItr;
+		PlayerControllerItr++)
 	{
-		APawn* Pawn = PawnItr->Get();
-
-		if (Pawn && (Pawn->IsLocallyControlled()))
+		AFPSPlayerController* PlayerController = Cast<AFPSPlayerController>(PlayerControllerItr->Get());
 		{
-			//Passing nullptr for the PlayerController pointer disables input for whatever playercontroller
-			//that owns the InstigatorPawn
-			Pawn->DisableInput(nullptr);
+			if (PlayerController && PlayerController->IsLocalController())
+			{
+				PlayerController->OnMissionCompleted(InstigatorPawn, bMissionSuccess);
+				DisablePlayerControllerPawnInput(PlayerController);
+			}
 		}
+	}
+}
+
+void AFPSGameState::DisablePlayerControllerPawnInput(AFPSPlayerController* PlayerController)
+{
+	APawn* LocalPawn = PlayerController->GetPawn();
+	if (LocalPawn)
+	{
+		LocalPawn->DisableInput(PlayerController);
 	}
 }
